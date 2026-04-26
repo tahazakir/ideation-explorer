@@ -1,0 +1,19 @@
+{
+  "assignment": {
+    "name": "vague",
+    "title": "Make something cool with AI",
+    "description": "Build a project that uses AI in some interesting way. The exact scope, audience, and form of the deliverable are up to you.",
+    "constraints": [
+      "Should be 'interesting'.",
+      "Should use AI."
+    ],
+    "deadline_days": 14.0
+  },
+  "recommended_plan": [
+    "Analysis or research project (using AI to uncover insights from data)",
+    "Public datasets (e.g., Kaggle, government data, social media)",
+    "Environmental/climate insights (e.g., carbon emissions patterns, deforestation trends, energy usage)"
+  ],
+  "expected_quality": 0.6714814814814816,
+  "expected_days": 11.148148148148149
+}

@@ -1,0 +1,311 @@
+{
+  "assignment": "Design and develop a web app for campus dining information",
+  "annotator": "taha",
+  "config": {
+    "rooms": 3,
+    "depth": 2,
+    "options": 3
+  },
+  "metrics": {
+    "wall_time_s": 31.861594915390015,
+    "total_calls": 19,
+    "by_role": {
+      "option_generator": {
+        "n": 4,
+        "input_tokens": 1672,
+        "output_tokens": 701,
+        "duration_s": 10.815460205078125
+      },
+      "consultant": {
+        "n": 9,
+        "input_tokens": 10485,
+        "output_tokens": 4989,
+        "duration_s": 68.86638283729553
+      },
+      "calibration_describer": {
+        "n": 6,
+        "input_tokens": 1684,
+        "output_tokens": 708,
+        "duration_s": 13.095298528671265
+      }
+    },
+    "total_input_tokens": 13841,
+    "total_output_tokens": 6398
+  },
+  "root": {
+    "history": [],
+    "decision": "Frontend framework choice",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.7200000000000001,
+      "scope_fit": 0.7488888888888889,
+      "notes": "React + Node.js is a sound, justifiable tech stack for 14 days, and web app prototyping sits comfortably within feasibility. The scope is well-defined (3+ features, external data, design doc, demo), but the plan lacks conceptual depth\u2014this is competent full-stack work, not systems modeling or emergent behavior analysis. The real risk is scope creep in feature polish (responsive design, authentication, error handling) eating the 14-day window; the plan would benefit from explicit prioritization and a clear 'MVP definition' to protect time for the design document and thoughtful data architecture decisions.",
+      "n_consultations": 9,
+      "quality_stddev": 0.0,
+      "budget_exhausted": false
+    },
+    "chosen_best_option": "React (component-based, large ecosystem, quick prototyping)",
+    "branches": [
+      {
+        "option": "React (component-based, large ecosystem, quick prototyping)",
+        "child": {
+          "history": [
+            "React (component-based, large ecosystem, quick prototyping)"
+          ],
+          "decision": "Backend architecture & data source approach",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7200000000000001,
+            "scope_fit": 0.7266666666666667,
+            "notes": "React + Node.js is a sound, justifiable tech stack for 14 days, and web app prototyping sits comfortably within feasibility. The scope is well-defined (3+ features, external data, design doc, demo), but the plan lacks conceptual depth\u2014this is competent full-stack work, not systems modeling or emergent behavior analysis. The real risk is scope creep in feature polish (responsive design, authentication, error handling) eating the 14-day window; the plan would benefit from explicit prioritization and a clear 'MVP definition' to protect time for the design document and thoughtful data architecture decisions.",
+            "n_consultations": 3,
+            "quality_stddev": 1.1102230246251565e-16,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Node.js/Express server with scraped dining hall data (HTML parsing or Playwright)",
+          "branches": [
+            {
+              "option": "Node.js/Express server with scraped dining hall data (HTML parsing or Playwright)",
+              "child": {
+                "history": [
+                  "React (component-based, large ecosystem, quick prototyping)",
+                  "Node.js/Express server with scraped dining hall data (HTML parsing or Playwright)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "React + Node.js is a sound, justifiable tech stack for 14 days, and web app prototyping sits comfortably within feasibility. The scope is well-defined (3+ features, external data, design doc, demo), but the plan lacks conceptual depth\u2014this is competent full-stack work, not systems modeling or emergent behavior analysis. The real risk is scope creep in feature polish (responsive design, authentication, error handling) eating the 14-day window; the plan would benefit from explicit prioritization and a clear 'MVP definition' to protect time for the design document and thoughtful data architecture decisions.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Serverless functions (Firebase/Vercel) with mock/static JSON dataset",
+              "child": {
+                "history": [
+                  "React (component-based, large ecosystem, quick prototyping)",
+                  "Serverless functions (Firebase/Vercel) with mock/static JSON dataset"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "React + serverless is a sound, well-justified tech stack that will deliver a polished working prototype in 14 days\u2014tool choice is appropriate and feasibility is high. Scope fit is solid but not exceptional: the plan risks becoming a straightforward CRUD app with UI polish rather than a systems modeling challenge. The conceptual complexity (data aggregation, filtering logic, state management) is moderate; there's no emergence, feedback dynamics, or multi-stakeholder behavior to model. This is a software engineering project, not a systems thinking project, which limits how much it can demonstrate the deeper modeling competencies Anand's rubric rewards.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Node.js/Express with third-party dining/campus API integration (e.g., HotSpot, Tapingo)",
+              "child": {
+                "history": [
+                  "React (component-based, large ecosystem, quick prototyping)",
+                  "Node.js/Express with third-party dining/campus API integration (e.g., HotSpot, Tapingo)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.68,
+                  "notes": "React + Node is a sound tool choice for web prototyping and fits the 14-day window comfortably. The plan's main weakness is scope ambiguity: 'real-time wait times' and 'external API integration' are placeholders without commitment to a specific data source or fallback strategy. The conceptual challenge is moderate\u2014this is a straightforward CRUD + filtering app without emergent dynamics or deep systems complexity. For a 14-day constraint, the team has breathing room, but the plan risks either becoming too narrow (basic menu browser) or running into friction from API unavailability mid-project.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Vue (lighter learning curve, good for rapid development)",
+        "child": {
+          "history": [
+            "Vue (lighter learning curve, good for rapid development)"
+          ],
+          "decision": "Backend architecture and data source strategy",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7200000000000001,
+            "scope_fit": 0.7600000000000001,
+            "notes": "This is a solid, achievable plan with good tool choices for the 14-day window and appropriate scope. The main weakness is that the conceptual modeling challenge is limited\u2014there's no emergent complexity or multi-agent dynamics here, just data retrieval and UI filtering. The plan will deliver a working prototype, but it's more of a software engineering exercise than a systems modeling one. Vue + Node.js is the right call for speed, and mocked data is pragmatic, but make sure the design document reflects genuine architectural thinking (caching strategy, data synchronization patterns, error handling under load) rather than just component diagrams.",
+            "n_consultations": 3,
+            "quality_stddev": 1.1102230246251565e-16,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Simple Node.js/Express server with mocked/static dining data (fastest, no external dependencies)",
+          "branches": [
+            {
+              "option": "Simple Node.js/Express server with mocked/static dining data (fastest, no external dependencies)",
+              "child": {
+                "history": [
+                  "Vue (lighter learning curve, good for rapid development)",
+                  "Simple Node.js/Express server with mocked/static dining data (fastest, no external dependencies)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "This is a solid, achievable plan with good tool choices for the 14-day window and appropriate scope. The main weakness is that the conceptual modeling challenge is limited\u2014there's no emergent complexity or multi-agent dynamics here, just data retrieval and UI filtering. The plan will deliver a working prototype, but it's more of a software engineering exercise than a systems modeling one. Vue + Node.js is the right call for speed, and mocked data is pragmatic, but make sure the design document reflects genuine architectural thinking (caching strategy, data synchronization patterns, error handling under load) rather than just component diagrams.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Node.js/Express with real API integration (e.g., university dining API or web scraping) plus database",
+              "child": {
+                "history": [
+                  "Vue (lighter learning curve, good for rapid development)",
+                  "Node.js/Express with real API integration (e.g., university dining API or web scraping) plus database"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "Vue + Node.js is a solid, justified tech stack for a web app\u2014this is the right tool choice, not a systems modeling problem. But this is a software engineering project, not a systems dynamics or agent-based modeling assignment. If this is being graded as a systems modeling course, the plan entirely misses the conceptual domain; if it's a web dev course, it's well-scoped but lacks the modeling rigor Anand emphasizes (no CLD, no ABM, no emergent behavior analysis). Clarify the course context before scoring confidence.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Serverless backend (Firebase/Supabase) with pre-loaded or real-time dining data",
+              "child": {
+                "history": [
+                  "Vue (lighter learning curve, good for rapid development)",
+                  "Serverless backend (Firebase/Supabase) with pre-loaded or real-time dining data"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.78,
+                  "notes": "Vue + serverless is a sound, feasible choice that avoids the setup friction of traditional full-stack frameworks\u2014good alignment with a 2-week deadline. However, the plan needs sharper specificity on the data source (scraped vs. mocked?) and emergence of features; as written, it risks being a straightforward CRUD app rather than one that surfaces non-obvious dining insights (e.g., demand prediction, group coordination). The design doc and AI disclosure are explicitly required and non-negotiable.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Plain HTML/CSS/JS (minimal dependencies, simpler deployment)",
+        "child": {
+          "history": [
+            "Plain HTML/CSS/JS (minimal dependencies, simpler deployment)"
+          ],
+          "decision": "Data source strategy for dining information",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7200000000000001,
+            "scope_fit": 0.7600000000000001,
+            "notes": "Plain HTML/CSS/JS is a defensible choice for a 14-day web app prototype and avoids framework overhead, but hardcoding the dataset misses a key learning objective: integrating an external data source. The plan is feasible and well-scoped for the timeline, but loses points for sidestepping the 'at least one external data source' requirement rather than meeting it thoughtfully. Consider: fetch from a real dining API (even if mocked server-side), or parse a CSV/JSON file dynamically\u2014both stay simple while demonstrating data integration, which is half the technical substance of a dining app.",
+            "n_consultations": 3,
+            "quality_stddev": 1.1102230246251565e-16,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Mock/hardcoded dataset (full control, no external dependencies, faster development)",
+          "branches": [
+            {
+              "option": "Mock/hardcoded dataset (full control, no external dependencies, faster development)",
+              "child": {
+                "history": [
+                  "Plain HTML/CSS/JS (minimal dependencies, simpler deployment)",
+                  "Mock/hardcoded dataset (full control, no external dependencies, faster development)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.78,
+                  "notes": "Plain HTML/CSS/JS is a defensible choice for a 14-day web app prototype and avoids framework overhead, but hardcoding the dataset misses a key learning objective: integrating an external data source. The plan is feasible and well-scoped for the timeline, but loses points for sidestepping the 'at least one external data source' requirement rather than meeting it thoughtfully. Consider: fetch from a real dining API (even if mocked server-side), or parse a CSV/JSON file dynamically\u2014both stay simple while demonstrating data integration, which is half the technical substance of a dining app.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Web scraping from actual campus dining website (realistic data, requires maintenance)",
+              "child": {
+                "history": [
+                  "Plain HTML/CSS/JS (minimal dependencies, simpler deployment)",
+                  "Web scraping from actual campus dining website (realistic data, requires maintenance)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "The plan is feasible and well-scoped for 14 days\u2014plain HTML/CSS/JS removes framework overhead, and web scraping is a realistic, manageable data source. Quality is limited by the lack of architectural sophistication: no backend server, no persistent state management, and vanilla JS scales poorly as feature complexity grows. The design document and demo will be straightforward, but the codebase risks becoming brittle as features interact. Consider whether a lightweight backend (Flask/Node) would better support the design document's credibility and the 'architecture decisions' requirement.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Public dining API if available (most reliable, but may not exist for target campus)",
+              "child": {
+                "history": [
+                  "Plain HTML/CSS/JS (minimal dependencies, simpler deployment)",
+                  "Public dining API if available (most reliable, but may not exist for target campus)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "Plain HTML/CSS/JS is a defensible choice for a 14-day web app, but risks underbaked architecture if you're building real filtering/search logic from scratch\u2014vanilla JS can get messy fast without a framework scaffold. The dining API dependency is a real blocker: most campuses don't expose public APIs, so you should front-load a feasibility spike (day 1\u20132) to confirm data access; if you fall back to scraping or mocked data, the architecture story becomes weaker and the 'real-time' requirement gets harder to justify credibly.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sampled_plan_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

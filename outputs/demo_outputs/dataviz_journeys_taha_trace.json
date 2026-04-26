@@ -1,0 +1,311 @@
+{
+  "assignment": "Build visualizations to explore user journeys and behaviors on an app",
+  "annotator": "taha",
+  "config": {
+    "rooms": 3,
+    "depth": 2,
+    "options": 3
+  },
+  "metrics": {
+    "wall_time_s": 30.9424467086792,
+    "total_calls": 19,
+    "by_role": {
+      "option_generator": {
+        "n": 4,
+        "input_tokens": 1821,
+        "output_tokens": 397,
+        "duration_s": 11.978864192962646
+      },
+      "consultant": {
+        "n": 9,
+        "input_tokens": 10822,
+        "output_tokens": 4636,
+        "duration_s": 64.48811912536621
+      },
+      "calibration_describer": {
+        "n": 6,
+        "input_tokens": 1795,
+        "output_tokens": 701,
+        "duration_s": 12.608115673065186
+      }
+    },
+    "total_input_tokens": 14438,
+    "total_output_tokens": 5734
+  },
+  "root": {
+    "history": [],
+    "decision": "Data source and scale",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.6699999999999999,
+      "scope_fit": 0.6522222222222223,
+      "notes": "The tool choice (Python + Plotly/Altair) is sound and the domain is concrete, but this plan conflates visualization as a deliverable with systems modeling. Anand's course rewards causal reasoning and emergent insight; user journey visualization is primarily descriptive analytics. The scope fits the timeline, but the intellectual challenge is below the bar for demonstrating systems thinking\u2014you're reading patterns off cleaned data, not discovering how feedback loops or heterogeneity generate behavior. If you reframe this as a causal model of conversion (what drives drop-off?) or stratification (why do power users behave differently?), scope and quality both rise.",
+      "n_consultations": 9,
+      "quality_stddev": 0.050405760987616705,
+      "budget_exhausted": false
+    },
+    "chosen_best_option": "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)",
+    "branches": [
+      {
+        "option": "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)",
+        "child": {
+          "history": [
+            "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)"
+          ],
+          "decision": "Choice of visualization library and technology stack",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7166666666666667,
+            "scope_fit": 0.6466666666666666,
+            "notes": "The tool choice (Python + Plotly/Altair) is sound and the domain is concrete, but this plan conflates visualization as a deliverable with systems modeling. Anand's course rewards causal reasoning and emergent insight; user journey visualization is primarily descriptive analytics. The scope fits the timeline, but the intellectual challenge is below the bar for demonstrating systems thinking\u2014you're reading patterns off cleaned data, not discovering how feedback loops or heterogeneity generate behavior. If you reframe this as a causal model of conversion (what drives drop-off?) or stratification (why do power users behave differently?), scope and quality both rise.",
+            "n_consultations": 3,
+            "quality_stddev": 0.004714045207910321,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Python (Plotly/Altair) + Jupyter notebook for interactive web-ready outputs",
+          "branches": [
+            {
+              "option": "Python (Plotly/Altair) + Jupyter notebook for interactive web-ready outputs",
+              "child": {
+                "history": [
+                  "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)",
+                  "Python (Plotly/Altair) + Jupyter notebook for interactive web-ready outputs"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.68,
+                  "notes": "The tool choice (Python + Plotly/Altair) is sound and the domain is concrete, but this plan conflates visualization as a deliverable with systems modeling. Anand's course rewards causal reasoning and emergent insight; user journey visualization is primarily descriptive analytics. The scope fits the timeline, but the intellectual challenge is below the bar for demonstrating systems thinking\u2014you're reading patterns off cleaned data, not discovering how feedback loops or heterogeneity generate behavior. If you reframe this as a causal model of conversion (what drives drop-off?) or stratification (why do power users behave differently?), scope and quality both rise.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "D3.js or Observable for custom, publication-ready interactive visualizations",
+              "child": {
+                "history": [
+                  "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)",
+                  "D3.js or Observable for custom, publication-ready interactive visualizations"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.71,
+                  "scope_fit": 0.58,
+                  "notes": "This is a visualization project, not a systems modeling one, so it falls outside Anand's usual rubric and teaching philosophy\u2014he grades it as data storytelling, not causal or emergent dynamics. The plan is feasible and the tool choice (D3.js/Observable) is sound, but the scope is slightly compressed for 10 days. The real weakness: the assignment as framed is about pattern recognition and dashboard construction, not conceptual modeling or scenario analysis. Anand would respect the execution but mark it down on 'depth of insight' because user journey visualization is largely a technical exercise once you have the data, not a systems thinking challenge.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Tableau or PowerBI for rapid prototyping with built-in funnel and flow templates",
+              "child": {
+                "history": [
+                  "Use publicly available real dataset (e.g., Kaggle mobile app events, Google Analytics sample data)",
+                  "Tableau or PowerBI for rapid prototyping with built-in funnel and flow templates"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.68,
+                  "notes": "The plan is feasible\u2014Tableau/PowerBI are excellent tools for this work and will produce polished, readable outputs quickly. But the scope is underspecified and risks becoming either too shallow or drifting into storytelling rather than modeling. Without a clear anchor on *what behavioral insight drives the visualization choice* (e.g., 'we model dropout as a function of friction at each step' vs. 'we just show what the data says'), the interpretation will feel observational rather than analytical. Consider committing to one focal hypothesis about user segmentation or dropout mechanics early, and design visualizations to test it.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Generate realistic synthetic event-log data from scratch with defined user personas and journey patterns",
+        "child": {
+          "history": [
+            "Generate realistic synthetic event-log data from scratch with defined user personas and journey patterns"
+          ],
+          "decision": "Visualization type pairing strategy",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.6933333333333334,
+            "scope_fit": 0.7066666666666667,
+            "notes": "The plan is feasible and targets the right visualization types, but lacks depth in the modeling layer. User journeys are inherently about *why* users follow certain paths\u2014the plan treats data generation as a mechanical step rather than an opportunity to embed realistic behavioral complexity (e.g., retention loops, device-switching, re-engagement). The interpretation will be weakened if the synthetic data doesn't reflect real product dynamics. Consider adding a third visualization (e.g., cohort retention curves or user segmentation scatter) and explicitly design journey patterns that create genuine insight\u2014not just random event sequences.",
+            "n_consultations": 3,
+            "quality_stddev": 0.018856180831641232,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Sankey diagram (paths/flows) + heatmap (temporal drop-off by stage)",
+          "branches": [
+            {
+              "option": "Sankey diagram (paths/flows) + heatmap (temporal drop-off by stage)",
+              "child": {
+                "history": [
+                  "Generate realistic synthetic event-log data from scratch with defined user personas and journey patterns",
+                  "Sankey diagram (paths/flows) + heatmap (temporal drop-off by stage)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.68,
+                  "notes": "The plan is feasible and targets the right visualization types, but lacks depth in the modeling layer. User journeys are inherently about *why* users follow certain paths\u2014the plan treats data generation as a mechanical step rather than an opportunity to embed realistic behavioral complexity (e.g., retention loops, device-switching, re-engagement). The interpretation will be weakened if the synthetic data doesn't reflect real product dynamics. Consider adding a third visualization (e.g., cohort retention curves or user segmentation scatter) and explicitly design journey patterns that create genuine insight\u2014not just random event sequences.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Funnel chart (conversion by stage) + sequence diagram (power-user vs casual paths)",
+              "child": {
+                "history": [
+                  "Generate realistic synthetic event-log data from scratch with defined user personas and journey patterns",
+                  "Funnel chart (conversion by stage) + sequence diagram (power-user vs casual paths)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.68,
+                  "scope_fit": 0.72,
+                  "notes": "The plan hits the core deliverables but underspecifies the visualization suite and risks shallow analysis. Funnel + sequence diagram is a defensible choice, but 'sequence diagram' is vague\u2014if it's a static comparison rather than an interactive flow exploration, it won't fully satisfy the assignment's demand for path revelation. The synthetic data generation is wise (no privacy friction), but the plan should explicitly commit to a tool (Python + Plotly/Altair, or Tableau) to show feasibility. The written interpretation will make or break this; the plan should budget time for *specific* visual feature analysis (e.g., 'the drop-off spike at Stage 3 correlates with the 40% longer session duration visible in the heatmap'), not generic summary. With 10 days available, there is room to add a third visualization type (e.g., heatmap of time-of-day \u00d7 conversion, or a scatter plot of session length vs. conversion rate by cohort) without overloading\u2014consider strengthening scope here.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Flow diagram (user journeys) + scatter plot (session length vs conversion rate by cohort)",
+              "child": {
+                "history": [
+                  "Generate realistic synthetic event-log data from scratch with defined user personas and journey patterns",
+                  "Flow diagram (user journeys) + scatter plot (session length vs conversion rate by cohort)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.68,
+                  "scope_fit": 0.72,
+                  "notes": "The plan is feasible and hits the assignment requirements, but lacks conceptual depth. A flow diagram + scatter plot is a safe, conventional choice that doesn't push beyond what a competent analyst would do in 2-3 days. The real missed opportunity: you're generating synthetic data from scratch rather than using it to test a hypothesis about user stratification or behavioral regimes. Consider anchoring on a specific product insight (e.g., 'do power users follow fundamentally different paths, or just repeat the same path faster?') to raise the model's conceptual rigor and scope fit.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Use a small real dataset combined with synthetic augmentation",
+        "child": {
+          "history": [
+            "Use a small real dataset combined with synthetic augmentation"
+          ],
+          "decision": "Primary sequential visualization type for user journeys",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.6,
+            "scope_fit": 0.6033333333333334,
+            "notes": "The plan is feasible and addresses the core requirements, but it's underspecified on the second visualization type and risks becoming a narrow single-technique exercise. Two Sankey diagrams or a Sankey + heatmap would be stronger. The written interpretation requirement is clear, but there's no discussion of how to handle power-user stratification or what 'realistic synthetic augmentation' means\u2014this needs a data generation plan to avoid vagueness.",
+            "n_consultations": 3,
+            "quality_stddev": 0.08286535263104033,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Sankey diagram (flow-based, shows path frequencies and drop-off widths)",
+          "branches": [
+            {
+              "option": "Sankey diagram (flow-based, shows path frequencies and drop-off widths)",
+              "child": {
+                "history": [
+                  "Use a small real dataset combined with synthetic augmentation",
+                  "Sankey diagram (flow-based, shows path frequencies and drop-off widths)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.71,
+                  "scope_fit": 0.68,
+                  "notes": "The plan is feasible and addresses the core requirements, but it's underspecified on the second visualization type and risks becoming a narrow single-technique exercise. Two Sankey diagrams or a Sankey + heatmap would be stronger. The written interpretation requirement is clear, but there's no discussion of how to handle power-user stratification or what 'realistic synthetic augmentation' means\u2014this needs a data generation plan to avoid vagueness.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Funnel chart (stage-by-stage conversion rates, simpler but less path detail)",
+              "child": {
+                "history": [
+                  "Use a small real dataset combined with synthetic augmentation",
+                  "Funnel chart (stage-by-stage conversion rates, simpler but less path detail)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.58,
+                  "scope_fit": 0.45,
+                  "notes": "The plan undershoots on both counts. A funnel chart alone doesn't reveal *paths* or *where users drop off* in meaningful ways\u2014it's just stage aggregation. You need at least two genuinely distinct visualizations (Sankey or alluvial for paths, plus heatmap or cohort matrix for behavioral segmentation). The scope is too narrow for 10 days: data prep + one chart type + interpretation is a 3\u20134 day task. To fix this: commit to Sankey + heatmap (or Sankey + cohort retention matrix), and add a power-user segmentation layer (e.g., session frequency or conversion speed cohorts). That fills the time and actually answers the three questions the product team cares about.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Sequence sunburst or icicle tree (hierarchical paths, compact but complex to read)",
+              "child": {
+                "history": [
+                  "Use a small real dataset combined with synthetic augmentation",
+                  "Sequence sunburst or icicle tree (hierarchical paths, compact but complex to read)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.51,
+                  "scope_fit": 0.68,
+                  "notes": "The plan correctly identifies a visualization task (good domain fit) and chooses a tool-appropriate approach (Python + interactive viz libraries), but the proposed sunburst/icicle tree for user journeys is a poor primary choice\u2014it compresses sequential flows into hierarchy, making dropout and conversion paths hard to read and compare. A Sankey diagram, funnel chart, or temporal heatmap would be far more direct. The plan needs a second, complementary visualization type and a clear breakdown of data preparation, exploratory analysis, and interpretation work. As written, it reads like a tool choice without a narrative.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sampled_plan_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

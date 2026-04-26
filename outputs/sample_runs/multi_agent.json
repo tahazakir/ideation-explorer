@@ -1,0 +1,252 @@
+{
+  "assignment": {
+    "name": "multi_agent",
+    "title": "Design and build a multi-agent system for a real task",
+    "description": "Design, implement, and evaluate a multi-agent system that solves a concrete task. The system should exhibit meaningful coordination among agents (planning, branching, delegation, or aggregation) and ship with a runnable artifact, evaluation evidence, and a written report.",
+    "constraints": [
+      "Must include at least two distinct agent roles with different responsibilities.",
+      "Must produce traceable logs showing inter-agent communication.",
+      "Must include >=5 evaluation cases and >=2 documented failure cases.",
+      "Total cost per representative run should remain reasonable (token-bounded).",
+      "Must be reproducible from the repo with a single documented command."
+    ],
+    "deadline_days": 14.0
+  },
+  "config": {
+    "n_rooms": 3,
+    "max_depth": 2,
+    "max_options": 2
+  },
+  "metrics": {
+    "wall_time_s": 10.206724166870117,
+    "total_calls": 7,
+    "by_role": {
+      "option_generator": {
+        "n": 3,
+        "input_tokens": 1118,
+        "output_tokens": 319,
+        "duration_s": 5.75813102722168
+      },
+      "consultant": {
+        "n": 4,
+        "input_tokens": 1424,
+        "output_tokens": 1254,
+        "duration_s": 18.325944900512695
+      }
+    },
+    "total_input_tokens": 2542,
+    "total_output_tokens": 1573
+  },
+  "recommended_plan": [
+    "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)",
+    "Simple domain (meeting scheduler: parse requests, check calendars, propose times, handle confirmations)"
+  ],
+  "root": {
+    "history": [],
+    "decision": "Choice of concrete task domain",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.7025,
+      "est_days": 12.25,
+      "notes": "Meeting scheduler is a solid, scoped choice with clear agent roles (planner/executor) and natural coordination opportunities. However, calendar state management and confirmation logic can become complex fast\u2014front-load a minimal mock calendar backend and define failure modes (conflicts, unavailability) upfront to avoid last-minute scope creep. The 14-day deadline is tight but achievable if you fix the domain boundaries early and use a lightweight framework (e.g., Claude API calls with structured logging).",
+      "n_consultations": 4
+    },
+    "chosen_best_option": "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)",
+    "branches": [
+      {
+        "option": "Document analysis & summarization (e.g., multi-agent literature review or contract analysis with specialized agents)",
+        "child": {
+          "history": [
+            "Document analysis & summarization (e.g., multi-agent literature review or contract analysis with specialized agents)"
+          ],
+          "decision": "Agent role specialization strategy",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.685,
+            "est_days": 12.25,
+            "notes": "Document analysis is a solid, well-scoped choice with clear agent roles (coordinator + specialists), but the plan lacks specificity on evaluation methodology, failure injection strategy, and cost management. Recommend immediately defining: (1) exact document domain & size, (2) evaluation metrics & test case generation, (3) token budget per run and fallback strategies, (4) which 2 failure modes to deliberately trigger\u2014this will consume 2-3 days of your 14-day window if deferred.",
+            "n_consultations": 2
+          },
+          "chosen_best_option": "Hierarchical (e.g., Coordinator + Specialist agents with explicit delegation flow)",
+          "branches": [
+            {
+              "option": "Hierarchical (e.g., Coordinator + Specialist agents with explicit delegation flow)",
+              "child": {
+                "history": [
+                  "Document analysis & summarization (e.g., multi-agent literature review or contract analysis with specialized agents)",
+                  "Hierarchical (e.g., Coordinator + Specialist agents with explicit delegation flow)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "est_days": 12.5,
+                  "notes": "Document analysis is a solid, well-scoped choice with clear agent roles (coordinator + specialists), but the plan lacks specificity on evaluation methodology, failure injection strategy, and cost management. Recommend immediately defining: (1) exact document domain & size, (2) evaluation metrics & test case generation, (3) token budget per run and fallback strategies, (4) which 2 failure modes to deliberately trigger\u2014this will consume 2-3 days of your 14-day window if deferred.",
+                  "n_consultations": 1
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Peer-based (e.g., Reader + Analyzer + Synthesizer agents with message passing)",
+              "child": {
+                "history": [
+                  "Document analysis & summarization (e.g., multi-agent literature review or contract analysis with specialized agents)",
+                  "Peer-based (e.g., Reader + Analyzer + Synthesizer agents with message passing)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.65,
+                  "est_days": 12.0,
+                  "notes": "The document analysis + peer-based architecture is feasible and directly addresses coordination requirements, but the plan lacks critical implementation details: no specification of the concrete task, agent communication protocol, or evaluation methodology. You need to immediately nail down the specific domain (contracts, research papers, etc.), define message schemas, and design your 5+ test cases before coding to avoid scope creep in the final week.",
+                  "n_consultations": 1
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)",
+        "child": {
+          "history": [
+            "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)"
+          ],
+          "decision": "Task domain scope and complexity",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.72,
+            "est_days": 12.25,
+            "notes": "Meeting scheduler is a solid, scoped choice with clear agent roles (planner/executor) and natural coordination opportunities. However, calendar state management and confirmation logic can become complex fast\u2014front-load a minimal mock calendar backend and define failure modes (conflicts, unavailability) upfront to avoid last-minute scope creep. The 14-day deadline is tight but achievable if you fix the domain boundaries early and use a lightweight framework (e.g., Claude API calls with structured logging).",
+            "n_consultations": 2
+          },
+          "chosen_best_option": "Simple domain (meeting scheduler: parse requests, check calendars, propose times, handle confirmations)",
+          "branches": [
+            {
+              "option": "Simple domain (meeting scheduler: parse requests, check calendars, propose times, handle confirmations)",
+              "child": {
+                "history": [
+                  "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)",
+                  "Simple domain (meeting scheduler: parse requests, check calendars, propose times, handle confirmations)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "est_days": 12.0,
+                  "notes": "Meeting scheduler is a solid, scoped choice with clear agent roles (planner/executor) and natural coordination opportunities. However, calendar state management and confirmation logic can become complex fast\u2014front-load a minimal mock calendar backend and define failure modes (conflicts, unavailability) upfront to avoid last-minute scope creep. The 14-day deadline is tight but achievable if you fix the domain boundaries early and use a lightweight framework (e.g., Claude API calls with structured logging).",
+                  "n_consultations": 1
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Medium domain (project task coordinator: decompose goals into subtasks, assign to agents, track dependencies, handle blockers)",
+              "child": {
+                "history": [
+                  "Planning & scheduling (e.g., meeting scheduler or project task coordinator with planner and executor agents)",
+                  "Medium domain (project task coordinator: decompose goals into subtasks, assign to agents, track dependencies, handle blockers)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "est_days": 12.5,
+                  "notes": "The project task coordinator is a solid, well-scoped domain that naturally fits multi-agent patterns (planner/executor with clear communication). Primary risks: (1) coordination logic complexity may balloon if dependency tracking and blocker resolution aren't carefully bounded\u2014define a maximum of 3-4 task levels and 2-3 blocker types upfront; (2) evaluation evidence (5+ cases + 2 failures) is tight on a 14-day deadline; start with synthetic test cases rather than real data to hit reproducibility and cost constraints quickly. Recommend building a minimal viable task graph (3-5 tasks max), automated test harness, and pre-written eval cases by day 5 to leave buffer for polish and report.",
+                  "n_consultations": 1
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "llm_calls": [
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 359,
+      "output_tokens": 81,
+      "duration_s": 1.33412504196167,
+      "started_at": 1776816246.548596,
+      "history_depth": 0,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 380,
+      "output_tokens": 79,
+      "duration_s": 1.792968988418579,
+      "started_at": 1776816247.883075,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 379,
+      "output_tokens": 159,
+      "duration_s": 2.6310369968414307,
+      "started_at": 1776816247.884214,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 354,
+      "output_tokens": 146,
+      "duration_s": 3.0659468173980713,
+      "started_at": 1776816249.676353,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 357,
+      "output_tokens": 421,
+      "duration_s": 6.04107403755188,
+      "started_at": 1776816249.67767,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 359,
+      "output_tokens": 197,
+      "duration_s": 2.991323947906494,
+      "started_at": 1776816252.742656,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 354,
+      "output_tokens": 490,
+      "duration_s": 6.22760009765625,
+      "started_at": 1776816250.5155048,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    }
+  ],
+  "ts_finished": 1776816256.743603
+}

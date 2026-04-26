@@ -1,0 +1,1279 @@
+{
+  "assignment": {
+    "name": "lit_review",
+    "title": "Write a focused literature review on retrieval-augmented generation",
+    "description": "Produce a literature review surveying the development of retrieval-augmented generation (RAG) for large language models. Identify major design families, representative papers, and open research questions, with a clear thesis about where the field is heading.",
+    "constraints": [
+      "Maximum 8 pages, single column, 11pt font.",
+      "Cite at least 20 peer-reviewed or arXiv papers, all post-2019.",
+      "Must include a taxonomy diagram of RAG architectures.",
+      "Must end with a section identifying at least 3 open research questions.",
+      "All claims about empirical results must be cited to a specific paper."
+    ],
+    "deadline_days": 10.0
+  },
+  "config": {
+    "n_rooms": 3,
+    "max_depth": 3,
+    "max_options": 3
+  },
+  "metrics": {
+    "wall_time_s": 50.87342405319214,
+    "total_calls": 40,
+    "by_role": {
+      "option_generator": {
+        "n": 13,
+        "input_tokens": 5323,
+        "output_tokens": 2498,
+        "duration_s": 38.821478605270386
+      },
+      "consultant": {
+        "n": 27,
+        "input_tokens": 10772,
+        "output_tokens": 8515,
+        "duration_s": 122.30434679985046
+      }
+    },
+    "total_input_tokens": 16095,
+    "total_output_tokens": 11013
+  },
+  "recommended_plan": [
+    "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+    "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+    "2D matrix diagram (retriever type \u00d7 integration point) with representative papers plotted"
+  ],
+  "root": {
+    "history": [],
+    "decision": "Scope of literature review: breadth vs. depth",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.6766666666666666,
+      "est_days": 8.674074074074074,
+      "notes": "The plan is well-structured and feasible, but the 2D matrix diagram may underrepresent the complexity\u2014consider upgrading to a 3D taxonomy or nested diagram to capture ranking strategies as a full third dimension. The chronological narrative is engaging but risks diluting focus; lead with the taxonomy thesis, then use history to justify it, to maximize clarity within 8 pages.",
+      "n_consultations": 27
+    },
+    "chosen_best_option": "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+    "branches": [
+      {
+        "option": "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+        "child": {
+          "history": [
+            "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)"
+          ],
+          "decision": "Scope of taxonomy/design families",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.6822222222222223,
+            "est_days": 8.833333333333334,
+            "notes": "The layered organization is well-suited to an 8-page format and should produce a coherent taxonomy. However, the thesis about 'convergence toward end-to-end learned pipelines with minimal components' risks being contradicted by recent literature (e.g., hybrid retrieval, modular reranking stages)\u2014verify this claim against at least 5 recent papers before finalizing, or reframe it as a trend with competing alternatives to avoid credibility issues.",
+            "n_consultations": 9
+          },
+          "chosen_best_option": "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)",
+          "branches": [
+            {
+              "option": "Organize by retrieval strategy (dense vs. sparse vs. hybrid) and augmentation timing (pre-generation vs. in-context vs. iterative)",
+              "child": {
+                "history": [
+                  "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                  "Organize by retrieval strategy (dense vs. sparse vs. hybrid) and augmentation timing (pre-generation vs. in-context vs. iterative)"
+                ],
+                "decision": "Thesis positioning: how to characterize RAG field trajectory",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7066666666666667,
+                  "est_days": 8.5,
+                  "notes": "The plan is solid but risks becoming descriptive rather than analytical. The thesis about 'convergence toward unified frameworks' is promising but underspecified\u2014clarify early what consolidation means empirically (e.g., hybrid methods outperforming pure strategies) to give the review argumentative force. The two-axis taxonomy (retrieval strategy \u00d7 augmentation timing) is clean and manageable within 8 pages if strictly enforced; consider front-loading your matrix/diagram and using it to structure paper sections, which will help stay focused and meet the citation requirement naturally.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "RAG as convergence toward unified retrieval-augmentation frameworks (implies design families are consolidating)",
+                "branches": [
+                  {
+                    "option": "RAG as convergence toward unified retrieval-augmentation frameworks (implies design families are consolidating)",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by retrieval strategy (dense vs. sparse vs. hybrid) and augmentation timing (pre-generation vs. in-context vs. iterative)",
+                        "RAG as convergence toward unified retrieval-augmentation frameworks (implies design families are consolidating)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan is solid but risks becoming descriptive rather than analytical. The thesis about 'convergence toward unified frameworks' is promising but underspecified\u2014clarify early what consolidation means empirically (e.g., hybrid methods outperforming pure strategies) to give the review argumentative force. The two-axis taxonomy (retrieval strategy \u00d7 augmentation timing) is clean and manageable within 8 pages if strictly enforced; consider front-loading your matrix/diagram and using it to structure paper sections, which will help stay focused and meet the citation requirement naturally.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "RAG as divergence into specialized, task-specific variants (implies fragmentation and domain-tuning is the frontier)",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by retrieval strategy (dense vs. sparse vs. hybrid) and augmentation timing (pre-generation vs. in-context vs. iterative)",
+                        "RAG as divergence into specialized, task-specific variants (implies fragmentation and domain-tuning is the frontier)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.68,
+                        "est_days": 8.5,
+                        "notes": "The plan is structurally sound and addresses all constraints, but the thesis (fragmentation/domain-tuning as frontier) is somewhat predictable and may lack novelty for a strong literature review. The two-axis taxonomy (retrieval strategy \u00d7 augmentation timing) is practical, though organizing 20+ papers across 6-8 cells risks shallow treatment of some families\u2014prioritize depth in 3-4 key variants and use the remainder as supporting evidence.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "RAG as foundational technique shifting focus from retrieval design to generation quality under retrieved context (implies the bottleneck has moved)",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by retrieval strategy (dense vs. sparse vs. hybrid) and augmentation timing (pre-generation vs. in-context vs. iterative)",
+                        "RAG as foundational technique shifting focus from retrieval design to generation quality under retrieved context (implies the bottleneck has moved)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan is solid and addresses all constraints, but the thesis about 'bottleneck migration' risks overstatement without careful empirical grounding\u2014ensure you cite specific papers showing generation-over-retrieval tradeoffs. The dual-axis taxonomy (strategy \u00d7 timing) is sensible but may create 6+ cells; keep the diagram readable within space constraints by consolidating or using hierarchical nesting rather than a matrix.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Organize by application domain (QA, summarization, reasoning, etc.) with cross-cutting architecture patterns",
+              "child": {
+                "history": [
+                  "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                  "Organize by application domain (QA, summarization, reasoning, etc.) with cross-cutting architecture patterns"
+                ],
+                "decision": "Scope of taxonomy diagram: breadth vs. depth trade-off",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.62,
+                  "est_days": 8.833333333333334,
+                  "notes": "The plan risks being too broad and diffuse for an 8-page format\u2014covering first principles, multiple domains, and a multi-axis taxonomy will likely force shallow treatment of each. Consider narrowing to 2\u20133 application domains or organizing primarily by architectural family (dense vs. sparse retrieval, in-context vs. fine-tuned fusion) to create a stronger narrative arc and clearer thesis.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Flat taxonomy showing all major architectural dimensions (retriever type, augmentation strategy, fusion method) as independent axes",
+                "branches": [
+                  {
+                    "option": "Flat taxonomy showing all major architectural dimensions (retriever type, augmentation strategy, fusion method) as independent axes",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by application domain (QA, summarization, reasoning, etc.) with cross-cutting architecture patterns",
+                        "Flat taxonomy showing all major architectural dimensions (retriever type, augmentation strategy, fusion method) as independent axes"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 9.5,
+                        "notes": "The plan risks being too broad and diffuse for an 8-page format\u2014covering first principles, multiple domains, and a multi-axis taxonomy will likely force shallow treatment of each. Consider narrowing to 2\u20133 application domains or organizing primarily by architectural family (dense vs. sparse retrieval, in-context vs. fine-tuned fusion) to create a stronger narrative arc and clearer thesis.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Hierarchical taxonomy with primary split (e.g., retriever-first vs. generator-first) then nested sub-categories by application",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by application domain (QA, summarization, reasoning, etc.) with cross-cutting architecture patterns",
+                        "Hierarchical taxonomy with primary split (e.g., retriever-first vs. generator-first) then nested sub-categories by application"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 8.5,
+                        "notes": "The plan attempts appropriate scope (comprehensive RAG survey) and includes required elements (taxonomy, open questions, citations). However, organizing primarily by application domain risks obscuring the architectural design families that should anchor a focused literature review\u2014consider inverting to lead with architecture patterns (dense vs. sparse retrieval, in-context vs. fine-tuned, iterative refinement) and use applications as evidence of when each excels. The hierarchical taxonomy is sound but ensure the primary split you choose (retriever-first vs. generator-first) actually explains the most important differences in the field; many papers might fit both categories, weakening analytical clarity.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Timeline-based taxonomy showing evolutionary progression from early RAG (2020) through recent variants, organized chronologically with branching",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by application domain (QA, summarization, reasoning, etc.) with cross-cutting architecture patterns",
+                        "Timeline-based taxonomy showing evolutionary progression from early RAG (2020) through recent variants, organized chronologically with branching"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 8.5,
+                        "notes": "The plan risks exceeding page limits by attempting both domain-based organization AND chronological taxonomy\u2014choose one primary structure to maintain focus. The timeline approach is stronger for a 'where the field is heading' thesis, but requires ruthless pruning of domains to stay within 8 pages while meeting the 20-citation minimum and taxonomy diagram requirement.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)",
+              "child": {
+                "history": [
+                  "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                  "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)"
+                ],
+                "decision": "Thesis positioning on field trajectory",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7200000000000001,
+                  "est_days": 9.166666666666666,
+                  "notes": "The layered organization is well-suited to an 8-page format and should produce a coherent taxonomy. However, the thesis about 'convergence toward end-to-end learned pipelines with minimal components' risks being contradicted by recent literature (e.g., hybrid retrieval, modular reranking stages)\u2014verify this claim against at least 5 recent papers before finalizing, or reframe it as a trend with competing alternatives to avoid credibility issues.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "RAG is converging toward end-to-end learned retrieval-generation pipelines with minimal architectural components",
+                "branches": [
+                  {
+                    "option": "RAG is converging toward end-to-end learned retrieval-generation pipelines with minimal architectural components",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)",
+                        "RAG is converging toward end-to-end learned retrieval-generation pipelines with minimal architectural components"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 9.5,
+                        "notes": "The layered organization is well-suited to an 8-page format and should produce a coherent taxonomy. However, the thesis about 'convergence toward end-to-end learned pipelines with minimal components' risks being contradicted by recent literature (e.g., hybrid retrieval, modular reranking stages)\u2014verify this claim against at least 5 recent papers before finalizing, or reframe it as a trend with competing alternatives to avoid credibility issues.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "RAG is diverging into specialized families optimized for different retrieval granularities and domain constraints",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)",
+                        "RAG is diverging into specialized families optimized for different retrieval granularities and domain constraints"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 9.5,
+                        "notes": "The layered architecture organization is sound and maps well to the taxonomy requirement, but the 'comprehensive survey' framing risks spreading too thin across 8 pages\u2014prioritize 4-5 exemplar papers per layer rather than attempting broad coverage. The thesis about specialization/divergence is defensible but needs 2-3 concrete examples (e.g., dense vs. sparse retrieval, chunk-size tradeoffs, domain-specific ranking) to land convincingly.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "RAG's core value is shifting from retrieval quality to effective context filtering and reasoning over noise",
+                    "child": {
+                      "history": [
+                        "Comprehensive survey covering RAG from first principles through latest variants (wider net, shallower per-method)",
+                        "Organize by architectural layers (retriever design, ranking/reranking, context integration, generation adaptation)",
+                        "RAG's core value is shifting from retrieval quality to effective context filtering and reasoning over noise"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The architectural-layer organization is sound and the thesis about context filtering is defensible, but the 'comprehensive' framing risks shallow treatment given 8-page constraints\u2014prioritize depth in 2\u20133 key families (e.g., dense retrieval + in-context adaptation) and cite selectively rather than trying to cover all variants. The taxonomy diagram will compress space further, so plan ruthlessly on scope.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+        "child": {
+          "history": [
+            "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)"
+          ],
+          "decision": "Scope of retrieval methods coverage",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.6477777777777778,
+            "est_days": 8.61111111111111,
+            "notes": "The plan's narrower, deeper focus risks leaving the literature review feeling incomplete\u2014a survey typically needs broader coverage of design families rather than exhaustive depth in 3-4. The strong emphasis on hybrid retrieval and theoretical gaps is strategically sound and differentiates the thesis, but ensure you still map the wider landscape (e.g., at least mention retriever training, generation-augmented retrieval, and multi-hop variants) even if briefly, so readers see the full taxonomy before you zoom in. Allocate ~1.5 days to comprehensive paper collection upfront to avoid citation gaps later.",
+            "n_consultations": 9
+          },
+          "chosen_best_option": "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families",
+          "branches": [
+            {
+              "option": "Focus on dense retrieval (learned embeddings, FAISS-style) as primary design family, treat sparse/hybrid as secondary",
+              "child": {
+                "history": [
+                  "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                  "Focus on dense retrieval (learned embeddings, FAISS-style) as primary design family, treat sparse/hybrid as secondary"
+                ],
+                "decision": "Scope of empirical evaluation coverage",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.6633333333333333,
+                  "est_days": 8.5,
+                  "notes": "The plan shows strong depth focus but risks underrepresenting the field's breadth\u2014a literature review typically surveys the landscape rather than deep-diving into a subset. The emphasis on dense retrieval may limit your ability to credibly identify \"major design families\" and open questions, since sparse/hybrid methods are actively competing approaches (BM25+LLM, ColBERT, etc.). Consider rebalancing: allocate 60% to breadth (sampling across families) and 40% to depth (detailed case studies), ensuring your taxonomy diagram and open questions reflect genuine design space rather than a particular subcommunity.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Focus on representative case studies (2-3 papers) showing trade-offs between design families rather than comprehensive performance survey",
+                "branches": [
+                  {
+                    "option": "Synthesize existing benchmarks (MS MARCO, Natural Questions, etc.) with comparative tables of model performance across families",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Focus on dense retrieval (learned embeddings, FAISS-style) as primary design family, treat sparse/hybrid as secondary",
+                        "Synthesize existing benchmarks (MS MARCO, Natural Questions, etc.) with comparative tables of model performance across families"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 8.5,
+                        "notes": "The plan has solid technical depth but risks exceeding page limits and missing breadth required for a survey. The emphasis on dense retrieval as primary reduces the taxonomy's comprehensiveness, and benchmark synthesis will consume significant space that could cover open questions and forward-looking thesis. Recommend narrowing architectural detail to 1-2 exemplars per family, consolidating benchmarks into a single summary table, and dedicating proportional space to emerging challenges (adaptive retrieval, context window limits, latency tradeoffs) to strengthen the forward-looking thesis.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Focus on representative case studies (2-3 papers) showing trade-offs between design families rather than comprehensive performance survey",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Focus on dense retrieval (learned embeddings, FAISS-style) as primary design family, treat sparse/hybrid as secondary",
+                        "Focus on representative case studies (2-3 papers) showing trade-offs between design families rather than comprehensive performance survey"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan shows strong depth focus but risks underrepresenting the field's breadth\u2014a literature review typically surveys the landscape rather than deep-diving into a subset. The emphasis on dense retrieval may limit your ability to credibly identify \"major design families\" and open questions, since sparse/hybrid methods are actively competing approaches (BM25+LLM, ColBERT, etc.). Consider rebalancing: allocate 60% to breadth (sampling across families) and 40% to depth (detailed case studies), ensuring your taxonomy diagram and open questions reflect genuine design space rather than a particular subcommunity.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Narrow to one application domain (e.g., QA or fact verification) to allow deeper analysis of design choices within realistic constraints",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Focus on dense retrieval (learned embeddings, FAISS-style) as primary design family, treat sparse/hybrid as secondary",
+                        "Narrow to one application domain (e.g., QA or fact verification) to allow deeper analysis of design choices within realistic constraints"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "est_days": 8.5,
+                        "notes": "The plan trades breadth for depth, which risks undershooting the assignment's survey requirement. A literature review needs comprehensive coverage of major design families (dense, sparse, hybrid, iterative refinement, etc.); narrowing to one application domain and treating sparse retrieval as secondary may leave significant gaps that weaken the thesis about where the field is heading. Consider: keep depth on 3-4 families but maintain balanced coverage of each, and use domain focus primarily to anchor examples rather than exclude architectures.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Treat dense and sparse retrieval (BM25, lexical) as co-equal design families with separate subsections",
+              "child": {
+                "history": [
+                  "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                  "Treat dense and sparse retrieval (BM25, lexical) as co-equal design families with separate subsections"
+                ],
+                "decision": "Scope of retrieval component coverage",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.5733333333333334,
+                  "est_days": 8.833333333333334,
+                  "notes": "The plan has strong depth but risks exceeding page limits by treating too many dimensions equally\u2014dense/sparse retrieval plus augmentation strategies will squeeze space for the required taxonomy diagram and open questions section. Recommend either narrowing to 2-3 design families with depth, or reducing augmentation strategies to brief coverage as secondary variants, reserving most space for representative papers and future directions.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Balance retrieval methods AND augmentation strategies (prompting, fusion, decoding) as equally important design dimensions",
+                "branches": [
+                  {
+                    "option": "Focus exclusively on retrieval methods (embeddings, ranking, reranking) without detailed coverage of downstream LLM integration/augmentation strategies",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Treat dense and sparse retrieval (BM25, lexical) as co-equal design families with separate subsections",
+                        "Focus exclusively on retrieval methods (embeddings, ranking, reranking) without detailed coverage of downstream LLM integration/augmentation strategies"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.45,
+                        "est_days": 8.5,
+                        "notes": "The plan creates a scope mismatch: by treating retrieval as co-equal design families and excluding LLM integration strategies, you'll produce a retrieval-focused paper rather than a RAG systems review, leaving the 'generation' half underrepresented and potentially misaligned with the assignment's explicit focus on RAG. Consider rebalancing to cover both retrieval AND augmentation strategies (prompt engineering, context window management, fusion methods) as equal design dimensions, which would better serve the thesis and taxonomy requirement.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Balance retrieval methods AND augmentation strategies (prompting, fusion, decoding) as equally important design dimensions",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Treat dense and sparse retrieval (BM25, lexical) as co-equal design families with separate subsections",
+                        "Balance retrieval methods AND augmentation strategies (prompting, fusion, decoding) as equally important design dimensions"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "est_days": 9.5,
+                        "notes": "The plan has strong depth but risks exceeding page limits by treating too many dimensions equally\u2014dense/sparse retrieval plus augmentation strategies will squeeze space for the required taxonomy diagram and open questions section. Recommend either narrowing to 2-3 design families with depth, or reducing augmentation strategies to brief coverage as secondary variants, reserving most space for representative papers and future directions.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Prioritize augmentation strategies over retrieval details, treating retrieval as a prerequisite but not core focus",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Treat dense and sparse retrieval (BM25, lexical) as co-equal design families with separate subsections",
+                        "Prioritize augmentation strategies over retrieval details, treating retrieval as a prerequisite but not core focus"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 8.5,
+                        "notes": "The plan has merit in depth-first approach but misaligns with assignment priorities: a literature review needs breadth across the field's development arc, not architectural deep-dives. Treating dense/sparse retrieval as co-equal design families will consume ~2 pages with limited novelty, leaving insufficient space for the required taxonomy, open questions, and representative paper coverage across the full spectrum of RAG variants (e.g., iterative retrieval, multi-hop reasoning, generation-augmented retrieval). Refocus on: (1) evolution timeline of RAG approaches, (2) major design dimensions as a matrix rather than separate deep dives, (3) augmentation strategies as one dimension within a unified taxonomy, ensuring the 20-paper requirement reflects actual methodological diversity.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families",
+              "child": {
+                "history": [
+                  "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                  "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families"
+                ],
+                "decision": "Scope of open research questions section",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7066666666666667,
+                  "est_days": 8.5,
+                  "notes": "The plan's narrower, deeper focus risks leaving the literature review feeling incomplete\u2014a survey typically needs broader coverage of design families rather than exhaustive depth in 3-4. The strong emphasis on hybrid retrieval and theoretical gaps is strategically sound and differentiates the thesis, but ensure you still map the wider landscape (e.g., at least mention retriever training, generation-augmented retrieval, and multi-hop variants) even if briefly, so readers see the full taxonomy before you zoom in. Allocate ~1.5 days to comprehensive paper collection upfront to avoid citation gaps later.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Emphasize foundational/theoretical gaps (e.g., when/why RAG helps, theoretical limits of retrieval augmentation)",
+                "branches": [
+                  {
+                    "option": "Focus exclusively on technical/architectural challenges (e.g., retrieval quality, ranking, fusion methods)",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families",
+                        "Focus exclusively on technical/architectural challenges (e.g., retrieval quality, ranking, fusion methods)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "est_days": 8.5,
+                        "notes": "The plan risks being too narrow in scope\u2014focusing heavily on hybrid retrieval methods across only 3-4 families may leave insufficient space for a comprehensive survey covering the field's breadth (e.g., indexing strategies, prompting techniques, domain-specific applications) and limits room for the required open research questions section. Recommend broadening to 5-6 design families with lighter architectural detail, or explicitly positioning hybrid retrieval as one major family among others, to ensure the literature review feels like a genuine survey rather than a focused position paper.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Balance technical challenges with application-level questions (e.g., domain adaptation, multimodal RAG, efficiency)",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families",
+                        "Balance technical challenges with application-level questions (e.g., domain adaptation, multimodal RAG, efficiency)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan has strong technical depth and reasonable scope, but risks over-committing to architectural detail at the expense of survey breadth\u2014a focused literature review typically needs to cover the field's evolution more broadly before diving deep into families. Consider front-loading 1\u20132 pages on RAG's origin and evolution (Lewis et al., etc.) to establish context, then allocate ~1 page per design family rather than exhaustive technical specs, which will free space for the open questions section and taxonomy diagram while staying under 8 pages.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Emphasize foundational/theoretical gaps (e.g., when/why RAG helps, theoretical limits of retrieval augmentation)",
+                    "child": {
+                      "history": [
+                        "Deep dive into 3-4 major RAG design families with extensive architectural detail (narrower focus, greater depth)",
+                        "Prioritize hybrid retrieval methods (dense+sparse fusion) as the emerging dominant approach across all 3-4 families",
+                        "Emphasize foundational/theoretical gaps (e.g., when/why RAG helps, theoretical limits of retrieval augmentation)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "est_days": 8.5,
+                        "notes": "The plan's narrower, deeper focus risks leaving the literature review feeling incomplete\u2014a survey typically needs broader coverage of design families rather than exhaustive depth in 3-4. The strong emphasis on hybrid retrieval and theoretical gaps is strategically sound and differentiates the thesis, but ensure you still map the wider landscape (e.g., at least mention retriever training, generation-augmented retrieval, and multi-hop variants) even if briefly, so readers see the full taxonomy before you zoom in. Allocate ~1.5 days to comprehensive paper collection upfront to avoid citation gaps later.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+        "child": {
+          "history": [
+            "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)"
+          ],
+          "decision": "Scope of design families to cover",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7,
+            "est_days": 8.577777777777776,
+            "notes": "The plan is well-structured and feasible, but the 2D matrix diagram may underrepresent the complexity\u2014consider upgrading to a 3D taxonomy or nested diagram to capture ranking strategies as a full third dimension. The chronological narrative is engaging but risks diluting focus; lead with the taxonomy thesis, then use history to justify it, to maximize clarity within 8 pages.",
+            "n_consultations": 9
+          },
+          "chosen_best_option": "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+          "branches": [
+            {
+              "option": "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+              "child": {
+                "history": [
+                  "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                  "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies"
+                ],
+                "decision": "Scope of taxonomy diagram and design space coverage",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.73,
+                  "est_days": 8.5,
+                  "notes": "The plan is well-structured and feasible, but the 2D matrix diagram may underrepresent the complexity\u2014consider upgrading to a 3D taxonomy or nested diagram to capture ranking strategies as a full third dimension. The chronological narrative is engaging but risks diluting focus; lead with the taxonomy thesis, then use history to justify it, to maximize clarity within 8 pages.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "2D matrix diagram (retriever type \u00d7 integration point) with representative papers plotted",
+                "branches": [
+                  {
+                    "option": "2D matrix diagram (retriever type \u00d7 integration point) with representative papers plotted",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+                        "2D matrix diagram (retriever type \u00d7 integration point) with representative papers plotted"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "est_days": 8.5,
+                        "notes": "The plan is well-structured and feasible, but the 2D matrix diagram may underrepresent the complexity\u2014consider upgrading to a 3D taxonomy or nested diagram to capture ranking strategies as a full third dimension. The chronological narrative is engaging but risks diluting focus; lead with the taxonomy thesis, then use history to justify it, to maximize clarity within 8 pages.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Hierarchical tree diagram showing design families and sub-variants with decision branching",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+                        "Hierarchical tree diagram showing design families and sub-variants with decision branching"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan has solid structural bones\u2014chronological narrative + taxonomy + open questions\u2014but risks narrative bloat in a constrained 8-page format. Start with the taxonomy diagram immediately (1-2 days), use it to anchor paper selection rather than discovering families afterward, and pre-draft the open questions section early to prevent last-minute content cuts. The three-family decomposition is sound but may need ruthless scope-limiting: pick 6-8 canonical papers per family max to stay within citation budget while covering depth.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Timeline+taxonomy hybrid showing evolution of families alongside architectural choices",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Three major families: retriever architecture (dense vs. sparse), integration points (naive vs. iterative vs. in-context), and ranking/reranking strategies",
+                        "Timeline+taxonomy hybrid showing evolution of families alongside architectural choices"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The chronological + taxonomy hybrid approach is sound and addresses all requirements, but risks diffusing focus across narrative and structure\u2014consider leading with a clear thesis statement (e.g., \"RAG is converging toward modular, adaptive retrieval with learned routing\") to anchor the story. The three families you've identified are solid, but the 8-page constraint is tight; prioritize 2\u20133 exemplar papers per family and use the taxonomy diagram efficiently to consolidate architectural comparisons rather than narrating every variant.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Two major families: retrieval mechanism (how documents are fetched) and fusion mechanism (how retrieved context is combined with generation)",
+              "child": {
+                "history": [
+                  "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                  "Two major families: retrieval mechanism (how documents are fetched) and fusion mechanism (how retrieved context is combined with generation)"
+                ],
+                "decision": "Scope of retrieval mechanisms to cover in taxonomy",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.6833333333333332,
+                  "est_days": 8.733333333333333,
+                  "notes": "The plan is solid and feasible within timeline, with good coverage of retrieval and fusion mechanisms. However, the chronological narrative risks diluting focus\u2014consider leading with the taxonomy/design families first, then using history to illustrate evolution, to better support a clear thesis about the field's direction. The three retrieval subtypes (dense/sparse/learned) are well-chosen but ensure they're framed as part of a coherent architecture taxonomy diagram rather than separate sections, to stay within page budget.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Dense + sparse + learned re-ranking \u2013 balanced coverage of practical systems used in RAG pipelines",
+                "branches": [
+                  {
+                    "option": "Dense retrieval only (embedding-based: DPR, ColBERT, etc.) \u2013 narrower but represents mainstream",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Two major families: retrieval mechanism (how documents are fetched) and fusion mechanism (how retrieved context is combined with generation)",
+                        "Dense retrieval only (embedding-based: DPR, ColBERT, etc.) \u2013 narrower but represents mainstream"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "est_days": 8.5,
+                        "notes": "The chronological + 2-family taxonomy is solid and achievable within page limits, but decision #3 (dense retrieval only) significantly weakens the review's scope and comprehensiveness. RAG literature spans sparse retrieval, hybrid BM25+dense, reranking, and iterative retrieval\u2014omitting these creates a distorted picture of the field. Recommend pivoting to a 3-4 family taxonomy (e.g., retrieval mechanism types + fusion patterns) to capture mainstream diversity while staying focused, and allocating ~1.5 pages to open questions as required.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Dense + sparse + hybrid (BM25, fusion methods like RRF) \u2013 comprehensive but risks diluting focus",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Two major families: retrieval mechanism (how documents are fetched) and fusion mechanism (how retrieved context is combined with generation)",
+                        "Dense + sparse + hybrid (BM25, fusion methods like RRF) \u2013 comprehensive but risks diluting focus"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.68,
+                        "est_days": 9.2,
+                        "notes": "The chronological narrative + dual-family taxonomy is sound and well-structured, but the comprehensiveness of dense/sparse/hybrid retrieval risks exceeding the 8-page limit unless ruthlessly scoped. Recommend front-loading the taxonomy diagram early (page 2), allocating ~1.5 pages per family, and pre-committing to 3-4 representative papers per mechanism to stay under page budget while meeting the 20-citation floor.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Dense + sparse + learned re-ranking \u2013 balanced coverage of practical systems used in RAG pipelines",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Two major families: retrieval mechanism (how documents are fetched) and fusion mechanism (how retrieved context is combined with generation)",
+                        "Dense + sparse + learned re-ranking \u2013 balanced coverage of practical systems used in RAG pipelines"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan is solid and feasible within timeline, with good coverage of retrieval and fusion mechanisms. However, the chronological narrative risks diluting focus\u2014consider leading with the taxonomy/design families first, then using history to illustrate evolution, to better support a clear thesis about the field's direction. The three retrieval subtypes (dense/sparse/learned) are well-chosen but ensure they're framed as part of a coherent architecture taxonomy diagram rather than separate sections, to stay within page budget.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Four major families by evolution stage: early retrieval-augmented systems, dense retriever era, iterative/adaptive RAG, and multimodal/hybrid RAG",
+              "child": {
+                "history": [
+                  "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                  "Four major families by evolution stage: early retrieval-augmented systems, dense retriever era, iterative/adaptive RAG, and multimodal/hybrid RAG"
+                ],
+                "decision": "Taxonomy diagram structure and placement",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.6866666666666666,
+                  "est_days": 8.5,
+                  "notes": "The plan is solid and addresses all hard requirements, but combining chronological narrative (step 1) with taxonomy-by-family (steps 2-3) risks redundancy and may compress the 8-page limit dangerously. Consider either: (a) leading with the taxonomy and using chronology to motivate each family, or (b) dropping the explicit chronological section and letting evolution emerge naturally within family discussions. The comparison matrix is excellent for clarity but needs to be designed compactly to preserve space for the required open questions section.",
+                  "n_consultations": 3
+                },
+                "chosen_best_option": "Matrix/grid comparing families across dimensions (e.g., retrieval method, ranking strategy, LLM integration) (emphasizes design space)",
+                "branches": [
+                  {
+                    "option": "Hierarchical tree showing evolution timeline with design families as branches (emphasizes chronological progression)",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Four major families by evolution stage: early retrieval-augmented systems, dense retriever era, iterative/adaptive RAG, and multimodal/hybrid RAG",
+                        "Hierarchical tree showing evolution timeline with design families as branches (emphasizes chronological progression)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "est_days": 8.5,
+                        "notes": "The chronological narrative is engaging but risks conflating organization by time with organization by conceptual design families\u2014the assignment asks for 'major design families' as a primary taxonomy, not temporal staging. Replace the evolution-tree diagram with a proper architecture taxonomy (e.g., retriever type \u00d7 augmentation strategy \u00d7 feedback mechanism) to directly satisfy the 'taxonomy diagram' requirement and create clearer analytical structure.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Matrix/grid comparing families across dimensions (e.g., retrieval method, ranking strategy, LLM integration) (emphasizes design space)",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Four major families by evolution stage: early retrieval-augmented systems, dense retriever era, iterative/adaptive RAG, and multimodal/hybrid RAG",
+                        "Matrix/grid comparing families across dimensions (e.g., retrieval method, ranking strategy, LLM integration) (emphasizes design space)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan is solid and addresses all hard requirements, but combining chronological narrative (step 1) with taxonomy-by-family (steps 2-3) risks redundancy and may compress the 8-page limit dangerously. Consider either: (a) leading with the taxonomy and using chronology to motivate each family, or (b) dropping the explicit chronological section and letting evolution emerge naturally within family discussions. The comparison matrix is excellent for clarity but needs to be designed compactly to preserve space for the required open questions section.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Flowchart showing decision points and architectural choices within each family (emphasizes engineering tradeoffs)",
+                    "child": {
+                      "history": [
+                        "Chronological narrative tracing RAG evolution from early hybrid systems to current state-of-the-art (story-driven approach)",
+                        "Four major families by evolution stage: early retrieval-augmented systems, dense retriever era, iterative/adaptive RAG, and multimodal/hybrid RAG",
+                        "Flowchart showing decision points and architectural choices within each family (emphasizes engineering tradeoffs)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "est_days": 8.5,
+                        "notes": "The plan is solid and addresses all hard constraints, but the chronological narrative (step 1) and architectural taxonomy (step 3) risk overlapping or creating redundancy in an 8-page format. Recommend collapsing these: use the four families as your primary taxonomy (satisfying the required diagram), embed chronology within each family section as brief context, and reserve the flowchart for decision tradeoffs only\u2014this maximizes substantive space for 20+ citations and open questions.",
+                        "n_consultations": 1
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "llm_calls": [
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 365,
+      "output_tokens": 123,
+      "duration_s": 2.0046069622039795,
+      "started_at": 1776816181.2892969,
+      "history_depth": 0,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 389,
+      "output_tokens": 205,
+      "duration_s": 2.9947848320007324,
+      "started_at": 1776816183.29544,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 387,
+      "output_tokens": 200,
+      "duration_s": 3.405125141143799,
+      "started_at": 1776816183.294505,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 392,
+      "output_tokens": 220,
+      "duration_s": 3.410857915878296,
+      "started_at": 1776816183.295795,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 431,
+      "output_tokens": 112,
+      "duration_s": 1.9366860389709473,
+      "started_at": 1776816186.709235,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 419,
+      "output_tokens": 198,
+      "duration_s": 2.8472297191619873,
+      "started_at": 1776816186.2927942,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 420,
+      "output_tokens": 197,
+      "duration_s": 3.0748820304870605,
+      "started_at": 1776816186.290484,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 418,
+      "output_tokens": 214,
+      "duration_s": 3.1073827743530273,
+      "started_at": 1776816186.291578,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 413,
+      "output_tokens": 195,
+      "duration_s": 3.0101659297943115,
+      "started_at": 1776816186.70513,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 422,
+      "output_tokens": 189,
+      "duration_s": 3.020254135131836,
+      "started_at": 1776816186.708071,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 424,
+      "output_tokens": 218,
+      "duration_s": 3.278513193130493,
+      "started_at": 1776816186.701341,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 413,
+      "output_tokens": 222,
+      "duration_s": 3.332758903503418,
+      "started_at": 1776816186.704027,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 430,
+      "output_tokens": 205,
+      "duration_s": 3.398231029510498,
+      "started_at": 1776816186.7068958,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 416,
+      "output_tokens": 268,
+      "duration_s": 4.492110013961792,
+      "started_at": 1776816188.6476119,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 407,
+      "output_tokens": 363,
+      "duration_s": 6.040179967880249,
+      "started_at": 1776816188.648345,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 405,
+      "output_tokens": 449,
+      "duration_s": 6.579221963882446,
+      "started_at": 1776816188.646208,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 398,
+      "output_tokens": 151,
+      "duration_s": 2.1785030364990234,
+      "started_at": 1776816194.688755,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 402,
+      "output_tokens": 165,
+      "duration_s": 2.561431884765625,
+      "started_at": 1776816195.2256901,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 399,
+      "output_tokens": 153,
+      "duration_s": 2.2236087322235107,
+      "started_at": 1776816196.8675241,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 395,
+      "output_tokens": 463,
+      "duration_s": 5.971378803253174,
+      "started_at": 1776816193.1400352,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 399,
+      "output_tokens": 169,
+      "duration_s": 2.532616138458252,
+      "started_at": 1776816197.7873878,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 402,
+      "output_tokens": 144,
+      "duration_s": 2.457556962966919,
+      "started_at": 1776816199.09139,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 402,
+      "output_tokens": 148,
+      "duration_s": 2.4402873516082764,
+      "started_at": 1776816199.1116428,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 395,
+      "output_tokens": 118,
+      "duration_s": 1.946117877960205,
+      "started_at": 1776816200.320207,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 395,
+      "output_tokens": 203,
+      "duration_s": 3.377628803253174,
+      "started_at": 1776816201.550357,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 390,
+      "output_tokens": 346,
+      "duration_s": 4.638217926025391,
+      "started_at": 1776816201.552108,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 388,
+      "output_tokens": 454,
+      "duration_s": 6.040919065475464,
+      "started_at": 1776816202.266536,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 403,
+      "output_tokens": 389,
+      "duration_s": 5.086512804031372,
+      "started_at": 1776816206.1905842,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 387,
+      "output_tokens": 507,
+      "duration_s": 6.936900854110718,
+      "started_at": 1776816204.928268,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 400,
+      "output_tokens": 158,
+      "duration_s": 2.176138162612915,
+      "started_at": 1776816211.8654358,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 401,
+      "output_tokens": 518,
+      "duration_s": 7.810256242752075,
+      "started_at": 1776816208.307669,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 397,
+      "output_tokens": 408,
+      "duration_s": 5.221348762512207,
+      "started_at": 1776816211.2773151,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 404,
+      "output_tokens": 544,
+      "duration_s": 7.0751049518585205,
+      "started_at": 1776816214.0417879,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 391,
+      "output_tokens": 410,
+      "duration_s": 5.3797829151153564,
+      "started_at": 1776816216.498934,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 406,
+      "output_tokens": 465,
+      "duration_s": 6.5251288414001465,
+      "started_at": 1776816216.118195,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 397,
+      "output_tokens": 172,
+      "duration_s": 2.7541251182556152,
+      "started_at": 1776816221.117158,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 401,
+      "output_tokens": 149,
+      "duration_s": 2.458181858062744,
+      "started_at": 1776816223.871562,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 393,
+      "output_tokens": 374,
+      "duration_s": 5.473413705825806,
+      "started_at": 1776816221.8789902,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 403,
+      "output_tokens": 426,
+      "duration_s": 6.113256216049194,
+      "started_at": 1776816222.643591,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 396,
+      "output_tokens": 401,
+      "duration_s": 5.814417839050293,
+      "started_at": 1776816226.3300102,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    }
+  ],
+  "ts_finished": 1776816232.1452851
+}

@@ -1,0 +1,133 @@
+{
+  "assignment": {
+    "name": "ml_notebook",
+    "title": "Train and evaluate a small image classifier on CIFAR-10",
+    "description": "Produce a Jupyter notebook that loads CIFAR-10, trains an image classifier from scratch, and reports test accuracy with a confusion matrix and at least one ablation comparing two design choices.",
+    "constraints": [
+      "Single notebook, runnable end-to-end on a free Colab T4 in under 30 minutes.",
+      "No pretrained weights; the model must be trained from scratch.",
+      "Final reported test accuracy must exceed 70%.",
+      "Include one ablation study (e.g. with vs. without data augmentation).",
+      "All hyperparameters declared in a single config cell at the top."
+    ],
+    "deadline_days": 5.0
+  },
+  "recommended_plan": [
+    "ResNet-18 or similar standard architecture",
+    "Compare no augmentation vs. standard augmentation (random crops, horizontal flips)"
+  ],
+  "execution": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set up notebook structure and import libraries",
+        "deliverable": "Notebook skeleton with all required imports (torch, torchvision, numpy, matplotlib, sklearn)",
+        "depends_on": []
+      },
+      {
+        "id": 2,
+        "title": "Create config cell with all hyperparameters",
+        "deliverable": "Single config cell defining: learning rate, batch size, num epochs, augmentation flags, model architecture params, random seed",
+        "depends_on": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement data loading pipeline",
+        "deliverable": "Functions to load CIFAR-10 train/test sets with configurable augmentation transforms (no-aug and standard-aug variants)",
+        "depends_on": [
+          2
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement ResNet-18 from scratch or use minimal torchvision definition",
+        "deliverable": "ResNet-18 model class callable with input shape (batch, 3, 32, 32) \u2192 (batch, 10)",
+        "depends_on": [
+          2
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement training loop with validation",
+        "deliverable": "train_epoch() and validate() functions that run one epoch and return loss/accuracy; include early stopping or checkpointing",
+        "depends_on": [
+          3,
+          4
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Train model without augmentation (ablation A)",
+        "deliverable": "Trained model checkpoint, training history (loss/acc curves) for no-augmentation run",
+        "depends_on": [
+          5
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Train model with standard augmentation (ablation B)",
+        "deliverable": "Trained model checkpoint, training history (loss/acc curves) for augmentation run",
+        "depends_on": [
+          5
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Evaluate both models on test set",
+        "deliverable": "Test accuracy scores and per-class predictions for both ablation variants",
+        "depends_on": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Generate confusion matrices and ablation comparison plot",
+        "deliverable": "Two confusion matrices (one per ablation), side-by-side training curves, and ablation summary table showing accuracy delta",
+        "depends_on": [
+          8
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Assemble final notebook with markdown documentation",
+        "deliverable": "Complete, runnable Jupyter notebook with section headers, method descriptions, results interpretation, and ablation conclusion",
+        "depends_on": [
+          9
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Validation run and timing check on Colab T4",
+        "deliverable": "Confirmed notebook executes end-to-end in <30 min, achieves >70% test accuracy, all outputs render correctly",
+        "depends_on": [
+          10
+        ]
+      }
+    ],
+    "estimated_total_hours": 8.5,
+    "open_risks": [
+      "ResNet-18 may not reach 70% on CIFAR-10 from scratch in 30 min without careful hyperparameter tuning; may need to increase training time or reduce model capacity and test iteratively",
+      "Colab T4 performance variance could cause timing overruns; recommend profiling early (task 6) and adjusting batch size or epochs if needed",
+      "Ablation difference (no-aug vs. aug) might be marginal (<3%); if so, results should still be reported honestly but consider whether methodology/architecture tuning is needed",
+      "Memory constraints on free Colab may limit batch size; monitor during task 6 and adjust config before task 7 if OOM occurs",
+      "Confusion matrix visualization for 10 classes can be hard to read; recommend applying normalization and colormap tuning in task 9"
+    ]
+  },
+  "executor_metrics": {
+    "wall_time_s": 8.98750615119934,
+    "total_calls": 1,
+    "by_role": {
+      "executor": {
+        "n": 1,
+        "input_tokens": 401,
+        "output_tokens": 1022,
+        "duration_s": 8.969460010528564
+      }
+    },
+    "total_input_tokens": 401,
+    "total_output_tokens": 1022
+  }
+}

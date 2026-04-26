@@ -1,0 +1,626 @@
+{
+  "assignment": "Model AI's effect on one job category",
+  "config": {
+    "rooms": 3,
+    "depth": 3,
+    "options": 3
+  },
+  "metrics": {
+    "wall_time_s": 54.216472864151,
+    "total_calls": 31,
+    "by_role": {
+      "option_generator": {
+        "n": 9,
+        "input_tokens": 4147,
+        "output_tokens": 2101,
+        "duration_s": 32.687500953674316
+      },
+      "consultant": {
+        "n": 18,
+        "input_tokens": 8691,
+        "output_tokens": 8159,
+        "duration_s": 116.17238187789917
+      },
+      "calibration_describer": {
+        "n": 4,
+        "input_tokens": 1200,
+        "output_tokens": 539,
+        "duration_s": 10.021725416183472
+      }
+    },
+    "total_input_tokens": 14038,
+    "total_output_tokens": 10799
+  },
+  "root": {
+    "history": [],
+    "decision": "Modeling approach: Causal Loop Diagram vs. Agent-Based Simulation",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.7216666666666667,
+      "scope_fit": 0.7322222222222222,
+      "notes": "Strong job choice (customer service reps have clear automation pressure and policy responses) and loop selection (capability\u2192adoption\u2192displacement\u2192regulation forms natural cycle). Risk: ensure you explicitly model the *difference* between high automation pressure and high worker support scenarios as distinct parameter sets or loop strength adjustments in a single diagram, not two separate diagrams\u2014this keeps the 1-figure constraint tight while clarifying causal contrast.",
+      "n_consultations": 18,
+      "quality_stddev": 0.0050000000000000044,
+      "budget_exhausted": false
+    },
+    "chosen_best_option": "Causal Loop Diagram (8-10 variables with loops and delays)",
+    "branches": [
+      {
+        "option": "Causal Loop Diagram (8-10 variables with loops and delays)",
+        "child": {
+          "history": [
+            "Causal Loop Diagram (8-10 variables with loops and delays)"
+          ],
+          "decision": "Job category choice",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7266666666666667,
+            "scope_fit": 0.7666666666666667,
+            "notes": "Strong job choice (customer service reps have clear automation pressure and policy responses) and loop selection (capability\u2192adoption\u2192displacement\u2192regulation forms natural cycle). Risk: ensure you explicitly model the *difference* between high automation pressure and high worker support scenarios as distinct parameter sets or loop strength adjustments in a single diagram, not two separate diagrams\u2014this keeps the 1-figure constraint tight while clarifying causal contrast.",
+            "n_consultations": 9,
+            "quality_stddev": 0.02762178421034677,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Customer service representatives (high routine tasks, clear automation trajectory)",
+          "branches": [
+            {
+              "option": "Customer service representatives (high routine tasks, clear automation trajectory)",
+              "child": {
+                "history": [
+                  "Causal Loop Diagram (8-10 variables with loops and delays)",
+                  "Customer service representatives (high routine tasks, clear automation trajectory)"
+                ],
+                "decision": "Causal loop structure: which 8-10 variables to include",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7633333333333333,
+                  "scope_fit": 0.8166666666666668,
+                  "notes": "Strong job choice (customer service reps have clear automation pressure and policy responses) and loop selection (capability\u2192adoption\u2192displacement\u2192regulation forms natural cycle). Risk: ensure you explicitly model the *difference* between high automation pressure and high worker support scenarios as distinct parameter sets or loop strength adjustments in a single diagram, not two separate diagrams\u2014this keeps the 1-figure constraint tight while clarifying causal contrast.",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.04189935029992177,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Focus on systemic feedback (AI capability, adoption rate, worker displacement, political pressure, regulation) as self-reinforcing cycle",
+                "branches": [
+                  {
+                    "option": "Focus on workforce dynamics (skills, wages, employment, turnover, retraining demand) with AI adoption as external driver",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Customer service representatives (high routine tasks, clear automation trajectory)",
+                        "Focus on workforce dynamics (skills, wages, employment, turnover, retraining demand) with AI adoption as external driver"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "scope_fit": 0.82,
+                        "notes": "Strong job choice (customer service is textbook automation-vulnerable) and CLD approach is well-scoped for the timeline. Risk: ensuring the diagram clearly isolates programmed causal claims from emergent interpretation\u2014student must explicitly document which loops/delays are definitional vs. empirical, and how the two scenarios differ mechanically (not just in parameter values). Recommend sketching variable list and loop structure in days 1\u20132 to catch ambiguity early.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Focus on organizational economics (automation investment, labor costs, service quality, customer satisfaction) with workforce adaptation as feedback",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Customer service representatives (high routine tasks, clear automation trajectory)",
+                        "Focus on organizational economics (automation investment, labor costs, service quality, customer satisfaction) with workforce adaptation as feedback"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The plan is solid in picking a high-automation job category with clear causal mechanisms, but risks underselling the workforce dimension. Customer service is excellent for showing automation pressure, yet the proposed focus on 'organizational economics + workforce adaptation as feedback' may compress human retraining, morale, or displacement into secondary loops\u2014which weakens scenario contrast. Ensure the two scenarios differ visibly in variables like *retraining investment*, *wage pressure*, or *worker retention*, not just automation spend.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Focus on systemic feedback (AI capability, adoption rate, worker displacement, political pressure, regulation) as self-reinforcing cycle",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Customer service representatives (high routine tasks, clear automation trajectory)",
+                        "Focus on systemic feedback (AI capability, adoption rate, worker displacement, political pressure, regulation) as self-reinforcing cycle"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.82,
+                        "scope_fit": 0.85,
+                        "notes": "Strong job choice (customer service reps have clear automation pressure and policy responses) and loop selection (capability\u2192adoption\u2192displacement\u2192regulation forms natural cycle). Risk: ensure you explicitly model the *difference* between high automation pressure and high worker support scenarios as distinct parameter sets or loop strength adjustments in a single diagram, not two separate diagrams\u2014this keeps the 1-figure constraint tight while clarifying causal contrast.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Software developers (moderate automation pressure, skill-shift dynamics)",
+              "child": {
+                "history": [
+                  "Causal Loop Diagram (8-10 variables with loops and delays)",
+                  "Software developers (moderate automation pressure, skill-shift dynamics)"
+                ],
+                "decision": "Scope of AI automation in software development",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.6966666666666667,
+                  "scope_fit": 0.7033333333333335,
+                  "notes": "The plan is feasible and well-scoped for the CLD track, with software developers offering rich dynamics around skill obsolescence, salary pressure, and retraining feedback loops. However, the focus on junior developers specifically risks oversimplifying the comparison\u2014ensure the two scenarios (high automation vs. high support) create visibly different feedback structures (e.g., retraining investment loops, wage compression loops) rather than just different parameter values, and clearly separate model-generated dynamics from interpretation in the memo.",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.03299831645537219,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Narrow focus: AI replacing junior developers in routine coding tasks (code generation, bug fixes)",
+                "branches": [
+                  {
+                    "option": "Narrow focus: AI replacing junior developers in routine coding tasks (code generation, bug fixes)",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Software developers (moderate automation pressure, skill-shift dynamics)",
+                        "Narrow focus: AI replacing junior developers in routine coding tasks (code generation, bug fixes)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The plan is feasible and well-scoped for the CLD track, with software developers offering rich dynamics around skill obsolescence, salary pressure, and retraining feedback loops. However, the focus on junior developers specifically risks oversimplifying the comparison\u2014ensure the two scenarios (high automation vs. high support) create visibly different feedback structures (e.g., retraining investment loops, wage compression loops) rather than just different parameter values, and clearly separate model-generated dynamics from interpretation in the memo.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Broad focus: AI disrupting multiple dev roles (juniors, QA, DevOps, technical leads through different pressures)",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Software developers (moderate automation pressure, skill-shift dynamics)",
+                        "Broad focus: AI disrupting multiple dev roles (juniors, QA, DevOps, technical leads through different pressures)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "scope_fit": 0.55,
+                        "notes": "The CLD choice is sound and software developers is a well-motivated domain with clear AI disruption dynamics. However, the plan conflates \"broad focus across multiple dev roles\" with the core requirement to compare exactly two scenarios (high automation vs. high support)\u2014this tension needs immediate clarification. The student should pick one dev role (e.g., junior developers OR QA engineers, not all three) as the focal unit, then build an 8\u201310 variable CLD that models how that role responds differently under automation-pressure vs. worker-support scenarios. Currently the scope risks becoming either too fragmented (trying to model 3+ roles simultaneously) or too vague (unclear which role anchors the comparison). Recommend: (1) explicitly name the single job category in focus, (2) map out the two scenario conditions as parameter/initial-condition changes (e.g., \"training budget\" or \"automation investment rate\"), and (3) draft variable list (~8\u201310) with clear feedback loops before day 3 to validate feasibility.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Infrastructure focus: AI as tool adoption forcing upskilling vs. workforce reduction in legacy maintenance teams",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Software developers (moderate automation pressure, skill-shift dynamics)",
+                        "Infrastructure focus: AI as tool adoption forcing upskilling vs. workforce reduction in legacy maintenance teams"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The software developer choice is strong\u2014rich dynamics with tool adoption, skill premiums, and churn. However, the plan lacks explicit scenario operationalization: you must clearly define what changes structurally between 'high automation pressure' (e.g., aggressive legacy code deprecation, faster tool adoption mandates) and 'high worker support' (e.g., retraining budgets, hiring freezes on automation). Map these to 2\u20133 concrete parameter shifts in your CLD before building, or risk delivering a single soft narrative rather than a crisp causal contrast.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Radiologists or medical imaging specialists (high-stakes automation, regulatory constraints)",
+              "child": {
+                "history": [
+                  "Causal Loop Diagram (8-10 variables with loops and delays)",
+                  "Radiologists or medical imaging specialists (high-stakes automation, regulatory constraints)"
+                ],
+                "decision": "CLD scope and framing: which AI disruption mechanism to model",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7200000000000001,
+                  "scope_fit": 0.7799999999999999,
+                  "notes": "The radiologist choice is smart (high-stakes, bounded domain, clear automation vectors), and the CLD scope fits well within 7 days. However, 'AI as tool augmentation' risks underselling the assignment: the two scenarios must show *contrast* (high automation pressure vs. high worker support), not just a baseline trajectory. Strengthen by explicitly modeling divergent paths\u2014e.g., scenario A: AI deployment + reduced hiring + deskilling pressure; scenario B: AI + retraining budgets + role expansion into AI oversight. This sharpens the causal differences and makes the memo argument concrete.",
+                  "n_consultations": 3,
+                  "quality_stddev": 1.1102230246251565e-16,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "AI as tool augmentation: radiologists adopt AI assistance \u2192 improved diagnostic speed/accuracy \u2192 workload shifts but roles persist",
+                "branches": [
+                  {
+                    "option": "AI as tool augmentation: radiologists adopt AI assistance \u2192 improved diagnostic speed/accuracy \u2192 workload shifts but roles persist",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Radiologists or medical imaging specialists (high-stakes automation, regulatory constraints)",
+                        "AI as tool augmentation: radiologists adopt AI assistance \u2192 improved diagnostic speed/accuracy \u2192 workload shifts but roles persist"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The radiologist choice is smart (high-stakes, bounded domain, clear automation vectors), and the CLD scope fits well within 7 days. However, 'AI as tool augmentation' risks underselling the assignment: the two scenarios must show *contrast* (high automation pressure vs. high worker support), not just a baseline trajectory. Strengthen by explicitly modeling divergent paths\u2014e.g., scenario A: AI deployment + reduced hiring + deskilling pressure; scenario B: AI + retraining budgets + role expansion into AI oversight. This sharpens the causal differences and makes the memo argument concrete.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "AI as substitution threat: AI automates routine cases \u2192 demand for radiologists drops \u2192 workforce contraction + upskilling pressure",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Radiologists or medical imaging specialists (high-stakes automation, regulatory constraints)",
+                        "AI as substitution threat: AI automates routine cases \u2192 demand for radiologists drops \u2192 workforce contraction + upskilling pressure"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The radiologist focus is excellent\u2014high stakes, real regulatory dynamics, and clear automation/upskilling tension make for rich CLD variables. However, the plan risks becoming too narrow on substitution; the strongest CLD will explicitly model the balancing loop (e.g., AI creating new diagnostic roles, compliance demand) and delay mechanisms (retraining lag, certification timelines) to show non-obvious system behavior. Ensure the two scenarios differ in *structure* (e.g., mandatory upskilling loops vs. cost-cutting loops), not just parameter tweaks, to meet the 'compare exactly two scenarios' requirement convincingly within 1 page.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "AI as workflow reorganization: AI handles screening/triage \u2192 radiologists shift to complex cases + AI oversight \u2192 role restructuring without job loss",
+                    "child": {
+                      "history": [
+                        "Causal Loop Diagram (8-10 variables with loops and delays)",
+                        "Radiologists or medical imaging specialists (high-stakes automation, regulatory constraints)",
+                        "AI as workflow reorganization: AI handles screening/triage \u2192 radiologists shift to complex cases + AI oversight \u2192 role restructuring without job loss"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.78,
+                        "notes": "The radiologist focus is excellent\u2014high stakes, regulatory barriers, and genuine role-restructuring dynamics make the CLD rich and defensible. However, the framing risks being too optimistic: the 'no job loss' narrative needs genuine tension between the two scenarios (automation pressure should plausibly threaten some roles) to satisfy the comparative requirement. Structure CLD around: demand elasticity, reskilling capacity, regulatory/liability loops, and job multiplier effects\u2014then show how high support *dampens* negative feedback, not eliminates it.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Agent-Based Simulation (15-20 workers with states and emergence)",
+        "child": {
+          "history": [
+            "Agent-Based Simulation (15-20 workers with states and emergence)"
+          ],
+          "decision": "Which job category to model",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.7166666666666667,
+            "scope_fit": 0.6977777777777778,
+            "notes": "The plan is concrete and well-scoped: customer service is an ideal domain (clear automation risk, visible worker states), NetLogo eliminates implementation risk, and 15\u201320 agents is achievable in 7 days. Main weaknesses: the plan lacks specificity on emergent mechanism design (what interaction between agents produces non-obvious outcomes?) and no contingency if NetLogo visualization doesn't fit cleanly on one page; recommend pre-sketching state transitions and identifying one specific emergent behavior (e.g., burnout cascading, skill-hoarding) before implementation to ensure it's not just individual automation outcomes summed.",
+            "n_consultations": 9,
+            "quality_stddev": 0.008164965809277268,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Customer service representatives (high routine tasks, clear automation baseline)",
+          "branches": [
+            {
+              "option": "Customer service representatives (high routine tasks, clear automation baseline)",
+              "child": {
+                "history": [
+                  "Agent-Based Simulation (15-20 workers with states and emergence)",
+                  "Customer service representatives (high routine tasks, clear automation baseline)"
+                ],
+                "decision": "Simulation platform and implementation approach",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7266666666666667,
+                  "scope_fit": 0.73,
+                  "notes": "The plan is concrete and well-scoped: customer service is an ideal domain (clear automation risk, visible worker states), NetLogo eliminates implementation risk, and 15\u201320 agents is achievable in 7 days. Main weaknesses: the plan lacks specificity on emergent mechanism design (what interaction between agents produces non-obvious outcomes?) and no contingency if NetLogo visualization doesn't fit cleanly on one page; recommend pre-sketching state transitions and identifying one specific emergent behavior (e.g., burnout cascading, skill-hoarding) before implementation to ensure it's not just individual automation outcomes summed.",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.05557777333511022,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Use NetLogo (visual, built-in visualization, easier 1-page screenshot, lower coding barrier)",
+                "branches": [
+                  {
+                    "option": "Use NetLogo (visual, built-in visualization, easier 1-page screenshot, lower coding barrier)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Customer service representatives (high routine tasks, clear automation baseline)",
+                        "Use NetLogo (visual, built-in visualization, easier 1-page screenshot, lower coding barrier)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.78,
+                        "scope_fit": 0.82,
+                        "notes": "The plan is concrete and well-scoped: customer service is an ideal domain (clear automation risk, visible worker states), NetLogo eliminates implementation risk, and 15\u201320 agents is achievable in 7 days. Main weaknesses: the plan lacks specificity on emergent mechanism design (what interaction between agents produces non-obvious outcomes?) and no contingency if NetLogo visualization doesn't fit cleanly on one page; recommend pre-sketching state transitions and identifying one specific emergent behavior (e.g., burnout cascading, skill-hoarding) before implementation to ensure it's not just individual automation outcomes summed.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Use Python with Mesa (more flexible agent control, richer state tracking, steeper learning curve)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Customer service representatives (high routine tasks, clear automation baseline)",
+                        "Use Python with Mesa (more flexible agent control, richer state tracking, steeper learning curve)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "scope_fit": 0.65,
+                        "notes": "The job choice (customer service) and simulation approach are well-motivated and appropriate for the assignment. However, Mesa's learning curve combined with the 7-day deadline creates meaningful execution risk\u2014a student unfamiliar with Mesa may spend 2-3 days on setup/debugging rather than modeling insights. Consider whether they have prior Mesa experience; if not, NetLogo or even a spreadsheet-based discrete event sim would reduce friction while preserving emergent complexity and scenario comparison.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Use spreadsheet-based simulation (Excel/Google Sheets with lookup tables and Monte Carlo, minimal coding but harder to show emergence clearly)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Customer service representatives (high routine tasks, clear automation baseline)",
+                        "Use spreadsheet-based simulation (Excel/Google Sheets with lookup tables and Monte Carlo, minimal coding but harder to show emergence clearly)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "scope_fit": 0.72,
+                        "notes": "Spreadsheet-based ABM is feasible in 7 days but will struggle to *visibly demonstrate* emergence\u2014lookup tables and Monte Carlo are essentially batch calculations, not agent interactions. The student risks delivering a table of outcomes rather than a clear emergent mechanism (e.g., skill clustering, turnover cascades, or retraining bottlenecks). Recommend either: (a) pivot to a lightweight Python/NetLogo ABM (3\u20134 hours to prototype) with visual output, or (b) switch to causal loop diagram, which is more naturally suited to spreadsheet visualization and where emergence can be shown analytically.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Software developers (mixed routine/creative work, visible skill stratification)",
+              "child": {
+                "history": [
+                  "Agent-Based Simulation (15-20 workers with states and emergence)",
+                  "Software developers (mixed routine/creative work, visible skill stratification)"
+                ],
+                "decision": "Simulation platform and implementation approach",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7166666666666667,
+                  "scope_fit": 0.7366666666666667,
+                  "notes": "NetLogo is an excellent fit for the ABM track and software developers offer rich stratification dynamics; the main risk is ensuring emergent behavior is truly distinct from programmed rules (e.g., skill clustering must arise from interactions, not be hard-coded). The 7-day timeline is comfortable if you prototype scenarios by day 3 and reserve days 4-6 for refinement and memo writing.",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.06944222218666554,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Use NetLogo (visual, built-in UI, easier scenario comparison, exports to screenshot)",
+                "branches": [
+                  {
+                    "option": "Use NetLogo (visual, built-in UI, easier scenario comparison, exports to screenshot)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Software developers (mixed routine/creative work, visible skill stratification)",
+                        "Use NetLogo (visual, built-in UI, easier scenario comparison, exports to screenshot)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.78,
+                        "scope_fit": 0.82,
+                        "notes": "NetLogo is an excellent fit for the ABM track and software developers offer rich stratification dynamics; the main risk is ensuring emergent behavior is truly distinct from programmed rules (e.g., skill clustering must arise from interactions, not be hard-coded). The 7-day timeline is comfortable if you prototype scenarios by day 3 and reserve days 4-6 for refinement and memo writing.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Use Python with Mesa (more flexible emergent mechanisms, steeper learning curve, screenshot via matplotlib)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Software developers (mixed routine/creative work, visible skill stratification)",
+                        "Use Python with Mesa (more flexible emergent mechanisms, steeper learning curve, screenshot via matplotlib)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "scope_fit": 0.68,
+                        "notes": "Software developers is an excellent choice with clear stratification dynamics and dual-scenario contrast potential. Mesa + Python is technically sound but introduces implementation risk: learning ABM design patterns, debugging emergent behavior, and producing a clean screenshot all within 7 days is tight. Recommend prototyping the core worker state machine (3 states: employed, upskilling, displaced) and emergence rule (skill clustering, wage bifurcation) in first 2 days; if Mesa friction is high, consider NetLogo or even a stylized table-based simulation to guarantee delivery.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Use a spreadsheet-based simulation (Excel/Sheets with VBA or formulas, fastest prototyping, limited emergence complexity)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Software developers (mixed routine/creative work, visible skill stratification)",
+                        "Use a spreadsheet-based simulation (Excel/Sheets with VBA or formulas, fastest prototyping, limited emergence complexity)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.62,
+                        "scope_fit": 0.71,
+                        "notes": "The software developer choice is sharp and domain-appropriate for visible stratification and AI impact, and ABS is the right method. However, spreadsheet-based simulation will severely constrain emergence\u2014you'll struggle to model the interaction dynamics (skill clustering, team bottlenecks, knowledge transfer breakdown) that make the comparison meaningful. Consider a lightweight Python sim (Mesa or custom loops) instead, which still prototypes quickly but lets you implement 1\u20132 genuinely emergent mechanisms (e.g., knowledge hoarding when job security drops, skill bifurcation). This gives you competitive advantage in interpretation without timeline risk.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Radiologists or medical imaging specialists (high-stakes domain, clear AI capability threshold)",
+              "child": {
+                "history": [
+                  "Agent-Based Simulation (15-20 workers with states and emergence)",
+                  "Radiologists or medical imaging specialists (high-stakes domain, clear AI capability threshold)"
+                ],
+                "decision": "Simulation platform and technical approach",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.7066666666666667,
+                  "scope_fit": 0.6266666666666667,
+                  "notes": "Strong domain choice and technically sound approach, but agent-based simulation with custom state machines is substantially more complex than a CLD and leaves minimal time for scenario comparison and memo refinement. Consider pre-built templates or simplified state logic (3 states: employed, retraining, displaced) to stay within 7 days while preserving emergent behavior (e.g., skill clustering, migration between states).",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.04189935029992177,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Python with Mesa or NetLogo (full custom agent sim with explicit state machines)",
+                "branches": [
+                  {
+                    "option": "Python with Mesa or NetLogo (full custom agent sim with explicit state machines)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Radiologists or medical imaging specialists (high-stakes domain, clear AI capability threshold)",
+                        "Python with Mesa or NetLogo (full custom agent sim with explicit state machines)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.75,
+                        "scope_fit": 0.65,
+                        "notes": "Strong domain choice and technically sound approach, but agent-based simulation with custom state machines is substantially more complex than a CLD and leaves minimal time for scenario comparison and memo refinement. Consider pre-built templates or simplified state logic (3 states: employed, retraining, displaced) to stay within 7 days while preserving emergent behavior (e.g., skill clustering, migration between states).",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Spreadsheet-based simulation (Excel/Google Sheets with Monte Carlo and state tracking)",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Radiologists or medical imaging specialists (high-stakes domain, clear AI capability threshold)",
+                        "Spreadsheet-based simulation (Excel/Google Sheets with Monte Carlo and state tracking)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.65,
+                        "scope_fit": 0.55,
+                        "notes": "Radiologists is an excellent, high-stakes choice with clear AI disruption narratives, and ABM is the right tool. However, spreadsheet-based Monte Carlo will struggle to capture emergent behavior (agent interactions, adaptive responses, network effects) convincingly\u2014you risk delivering deterministic batch outcomes rather than true emergence. Consider a lightweight Python/NetLogo implementation instead, or pivot to a CLD if spreadsheet constraints are binding. The 1-page memo + 1 figure is tight but achievable if the simulation runs and produces visually clear comparative snapshots.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Existing educational tool or template (e.g., Insimulo, AnyLogic free tier) to minimize build time",
+                    "child": {
+                      "history": [
+                        "Agent-Based Simulation (15-20 workers with states and emergence)",
+                        "Radiologists or medical imaging specialists (high-stakes domain, clear AI capability threshold)",
+                        "Existing educational tool or template (e.g., Insimulo, AnyLogic free tier) to minimize build time"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.72,
+                        "scope_fit": 0.68,
+                        "notes": "The agent-based approach is ambitious but feasible within 7 days if you commit to a lightweight platform (AnyLogic free tier is viable; Insimulo may have learning curve overhead). Radiologists is an excellent, high-stakes choice with clear AI thresholds. Key risk: you must front-load platform familiarization in days 1\u20132 and hard-lock the emergent mechanism by day 3 to leave time for scenario runs, interpretation, and memo writing. The 1-page memo will be tight\u2014prioritize memo structure early.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sampled_plan_ids": [
+    1,
+    2,
+    3,
+    4
+  ]
+}
