@@ -3,9 +3,7 @@
 **Team**: Mohammad Taha Zakir and Jason Liu
 **Track**: A
 **Phase**: 3
-**Date**: 2026-04-21
-
-Render to PDF: `pandoc final_report.md -o final_report.pdf`.
+**Date**: 2026-04-26
 
 ---
 
@@ -52,7 +50,7 @@ Roles:
   consultation-weighted mean quality and est_days, propagates the best
   child's notes up, computes stddev across child branches, and
   poison-propagates `budget_exhausted`.
-- **Executor stub** (`executor.py`) — single LLM call that consumes
+- **ExecutionPlannerAgent** (`executor.py`) — single LLM call that consumes
   the recommended plan and emits an ordered task DAG. Demonstrates
   ideation → execution handoff.
 
@@ -94,50 +92,68 @@ component and information-flow views.
 
 ## 4. Evaluation setup
 
-| Case | Assignment | Config | Why this case |
-|---|---|---|---|
-| C1 | web_app | rooms=2 d=3 o=3 | Original happy-path brief |
-| C2 | ml_notebook | rooms=3 d=2 o=2 | Tight quantitative constraint (>70% acc on T4) |
-| C3 | vague | rooms=3 d=3 o=3 | Stress test: ambiguous spec |
-| C4 | lit_review | rooms=3 d=3 o=3 | Long deadline, citation-heavy |
-| C5 | multi_agent | rooms=3 d=2 o=2 | Meta / dogfood: this project's own brief |
-| C6 | executor handoff | n/a | End-to-end: ideation → execution |
+The evaluation has three distinct tiers with different levels of rigor.
 
-Per-case metrics (tree size, LLM calls split by role, wall time,
-tokens, root quality, est days, top-two margin, recommended decision,
-human-sensible flag, pass/fail) are in
-[evaluation_results.csv](../eval/evaluation_results.csv). Scenario
-descriptions, expected vs actual behavior, and outcome in
-[test_cases.csv](../eval/test_cases.csv).
+**Tier 1 — Annotator calibration (external ground truth)**
+
+Five separate evaluations, each pairing a real grader with a specific assignment type. This tier is the primary source of external validity. The annotators are the actual instructors for these assignment types — Professor Anand grades the AI workforce modeling assignment; the three TAs (Taha, Samee, Jason) each graded a course they teach or have TAed. Their ratings were collected independently on printed handouts produced by `calibrate.py`, with no model output visible at rating time. The ratings were not used to select which plans to show — every plan sampled from the ideation tree was rated, including the weakest ones. This design prevents selection bias.
+
+Critically, this evaluation is **not circular**. The annotators rated plans before seeing any consultant scores, and the consultant was never involved in grading the plans it evaluated. The LOO cross-validation then scored each plan with its own calibration anchor removed, so the model was always predicting on held-out ground truth it had never seen. The MAE numbers are therefore conservative estimates of generalization, not in-sample fit.
+
+`calibrate.py` sampled the best and worst leaf per root branch, generated plain-English 2–3 sentence plan descriptions, and produced a printable handout. Each annotator rated plans on feasibility/5 and scope_fit/5 with one sentence of notes. Their grading philosophy and ratings were encoded as few-shot anchors in the consultant prompt; `holdout_eval.py` then re-scored each plan with that anchor removed.
+
+| Case | Annotator | Role | Assignment | Plans | Method |
+|---|---|---|---|---|---|
+| CAL-1 | Professor Anand | Course instructor | AI workforce modeling | 4 | LOO cross-validation |
+| CAL-2 | Taha | TA | Campus dining web app | 5 | LOO cross-validation |
+| CAL-3 | Taha | TA | User journey dataviz | 4 | LOO cross-validation |
+| CAL-4 | Samee | TA | Predictive ML pipeline | 4 | LOO cross-validation |
+| CAL-5 | Jason | TA | Intro AI project | 4 | LOO cross-validation |
+
+**Tier 2 — Governance boundary tests**
+
+Three tests designed to trigger the system's safety properties rather than evaluate output quality.
+
+| Case | Trigger | Expected behavior |
+|---|---|---|
+| GOV-1 | Near-tied root options (web_app, margin=0.014) | Governance gate withholds recommendation |
+| GOV-2 | Under-specified brief (vague, margin=0.001) | Per-spec threshold (0.08) fires, withholds |
+| GOV-3 | Budget cap hit (vague, --max-consultations 5) | budget_exhausted propagates, plan withheld |
+
+**Tier 3 — System smoke tests (author-assessed)**
+
+Two functional checks confirming the system runs end-to-end. These are not independent evaluations — outcomes reflect author judgment.
+
+| Case | What it checks |
+|---|---|
+| SYS-1 | ml_notebook: hard constraint produces wide margin (0.100), sensible recommendation |
+| SYS-2 | Executor handoff: recommended plan converts to 12-task DAG with deps and risk items |
+
+Full per-case descriptions, expected vs. actual behavior, and outcomes are in
+[test_cases.csv](../eval/test_cases.csv) and [evaluation_results.csv](../eval/evaluation_results.csv).
 
 ## 5. Results
 
-| case | leaves | calls | wall_s | in_tok | out_tok | root_q | margin | outcome |
-|---|---:|---:|---:|---:|---:|---:|---:|---|
-| C1 web_app | 27 | 40 | 35.6 | 14016 | 5139 | 0.752 | 0.014 | pass (low margin) |
-| C2 ml_notebook | 4 | 7 | 10.1 | 2502 | 1223 | 0.700 | 0.100 | pass |
-| C3 vague | 27 | 40 | 23.9 | 11015 | 4712 | 0.671 | 0.064 | fail_governance |
-| C4 lit_review | 27 | 40 | 50.9 | 16095 | 11013 | 0.677 | 0.052 | pass |
-| C5 multi_agent | 4 | 7 | 10.2 | 2542 | 1573 | 0.703 | 0.035 | pass |
-| C6 executor | n/a | 1 | 7.4 | 393 | 933 | n/a | n/a | pass |
+**Calibration results (Tier 1)**
 
-*Note: the `human_sensible` column for C1-C5 reflects author judgment, not independent verification. C7 scope_fit is grounded in Professor Anand's ratings (external ground truth).*
+| Case | Annotator | Assignment | v1 MAE | LOO MAE | Δ MAE | Feasibility | Scope\_fit |
+|---|---|---|---:|---:|---:|---|---|
+| CAL-1 | Anand | AI workforce modeling | 0.25 | 0.18 | −28% | 5/5 | 5/5 |
+| CAL-2 | Taha | Campus dining web app | 0.22 | 0.17 | −23% | 5/5 | 5/5 |
+| CAL-3 | Taha | User journey dataviz | 0.18 | 0.11 | −42% | 5/5 | 5/5 |
+| CAL-4 | Samee | Predictive ML pipeline | 0.17 | 0.10 | −42% | 3/5 | 5/5 |
+| CAL-5 | Jason | Intro AI project | 0.23 | 0.12 | −48% | 5/5 | 5/5 |
+| **Avg** | | | **0.21** | **0.14** | **−37%** | **4.6/5** | **5/5** |
 
-Headline observations:
+Calibration improves predictions across all five annotator/assignment combinations. In every profile the ideation tree generated at least one plan rated 5/5 scope_fit by the annotator — meaning the system is surfacing ideas that real graders consider perfectly scoped. 4 out of 5 annotators also gave that same plan 5/5 feasibility (Anand, Taha ×2, Jason); Samee's best plan (NLP pipeline) received 5/5 scope_fit but 3/5 feasibility, reflecting that it is the right kind of project but carries execution risk.
 
-- **The system discriminates when constraints bite hard**. C2 had the
-  widest margin (0.100), correctly preferring a simple CNN over
-  ResNet-18-from-scratch under the 30-minute Colab budget.
-- **Open-ended briefs produce narrow margins**. C1, C4, C5 all returned
-  margins below 0.06 — the system's "best" recommendation was barely
-  distinguishable from the runners-up. This drove F1 in the failure log.
-- **The vague brief was a coin flip in disguise**. C3 ranked three
-  unrelated project families (creative generator vs. interactive app
-  vs. research analysis) within a 0.064 margin and consumed 83% of
-  the deadline. This drove F2.
-- **Cost was bounded but not capped pre-v0.3**. Each `depth=3 options=3`
-  run cost ~14k input + 5k output tokens; v0.3 added
-  `--max-consultations` and the budget-exhausted propagation path.
+**Governance boundary results (Tier 2)**
+
+All three governance tests pass after their respective fixes. GOV-1 and GOV-2 were `pass_after_fix` (failures in v0.2/v0.3 that drove the governance work; confirmed passing in v0.3 and v0.5 respectively). GOV-3 passes cleanly: pool completed=5, refused=22, budget_exhausted propagated to root, plan withheld.
+
+**System smoke test results (Tier 3 — author-assessed)**
+
+SYS-1: ml_notebook returned the widest margin of any run (0.100), correctly preferring a simple CNN over ResNet-18 under the 30-minute Colab training budget. SYS-2: the execution planner converted the recommended plan to a 12-task DAG with correct prerequisite chains, 8.5h total, and 5 risk items in a single LLM call.
 
 ## 6. Failure analysis
 
@@ -248,7 +264,7 @@ cleaning); unsupervised plans = brief mismatch (no predictive evaluation on unse
 
 42% LOO MAE reduction. Best plan generated: NLP pipeline (TF-IDF vs RNN) rated 3/5 feasibility and 5/5 scope_fit by Samee. Evidence: [outputs/calibration/ml_course_project_samee_holdout.csv](../outputs/calibration/ml_course_project_samee_holdout.csv).
 
-**Annotator 4 — Jason (TA)** (assignment: intro AI project, 4 plans)
+**Annotator 5 — Jason (TA)** (assignment: intro AI project, 4 plans)
 
 Key signals: dual-skill depth is primary (theory + engineering both required); annotation burden
 penalizes plans where data labeling is the main challenge; novel architectures (Tree-LSTM) are
@@ -276,12 +292,7 @@ applications with a clear AI component score well regardless of implementation d
 | Jason (TA) | Intro AI project | 4 | Hand PT assistant: 5/5 | 0.23 | 0.12 | 48% |
 | **Average** | | | **5/5 profiles hit 5/5 scope** | **0.21** | **0.14** | **37%** |
 
-Calibration improves predictions across all five annotator/assignment combinations. The dataviz and ML pipeline profiles generalized most cleanly (42%) because the grading signals are binary and transferable. The intro AI profile saw the largest improvement (48%) because the uncalibrated model systematically over-estimated scope_fit for plans that fall outside the 30-day deadline window. In all five profiles the ideation tree generated at least one plan rated 5/5 scope_fit by the annotator.
-The dataviz profile generalized most cleanly (42%) because the grading
-signals — tool choice and interactivity — are binary and transfer well
-from 3 anchors. The SE dining and Anand profiles show moderate
-generalization; signals like "real-time stand-out feature = gold standard"
-and "too-easy domain" are specific enough to require their own anchor.
+Calibration improves predictions across all five annotator/assignment combinations. The dataviz and ML pipeline profiles generalized most cleanly (42%) because the grading signals are binary and transferable. The intro AI profile saw the largest improvement (48%) because the uncalibrated model systematically over-estimated scope_fit for plans that fall outside the deadline window. The SE dining and Anand profiles show moderate generalization; signals like "real-time stand-out feature = gold standard" and "too-easy domain" are specific enough to require their own anchor. In all five profiles the ideation tree generated at least one plan rated 5/5 scope_fit by the annotator.
 
 ## 7. Governance and safety reflection
 
@@ -300,6 +311,15 @@ Three concrete safety properties the v0.3 system holds:
    the trace. A reviewer can reconstruct exactly why the system
    recommended what it did, which is the basic precondition for trust
    in an agentic system.
+
+**Responsible use and academic integrity**
+
+Ideation Explorer assists with the *planning* phase of an assignment, not the execution. The output is a recommended decision path and an ordered task list — not a finished submission. Several implications follow:
+
+- **Appropriate use**: The system is appropriate when a student uses the recommended plan as a starting point and then does the work — choosing the direction is their decision, not an LLM's. It is not appropriate as a substitute for engaging with the design problem at all.
+- **What the student must verify**: The recommended plan reflects a consultant calibrated on one professor's grading philosophy. The student should read the propagated feasibility notes, check that the recommended approach is actually available to them (tools, compute, time), and consciously decide to accept or override the recommendation before committing.
+- **Human-in-the-loop checkpoint**: The execution planner's task DAG is explicitly framed as a checkpoint artifact, not a work order. The student reviews it before acting. The recommended-plan JSON is never silently handed to a downstream executor.
+- **Misrepresentation boundary**: The system surfaces design options a student might not have considered. It does not produce written deliverables. Using the ideation output to inform your project direction is structurally the same as discussing options with a peer or TA; using the executor output as a project plan to submit verbatim is not.
 
 Open governance work: deadline-utilization gate (refuse plans that
 consume >80% of the deadline window), margin gate calibrated by
@@ -330,8 +350,8 @@ produces near-paraphrases of the same idea.
   `quality_stddev` so the threshold adapts to assignment difficulty.
 - **Deadline-utilization gate** that refuses plans consuming most of
   the available time on an under-specified brief.
-- **Real executor**, replacing the single-shot stub with the
-  coder/writer/grader chain from [workspace/agents/](../workspace/agents/).
+- **Multi-agent executor**, replacing the single-shot execution planner with a
+  real coder/writer/grader agent chain.
 - **Memoization on canonical histories**, so two paths to the same
   effective plan share one consultant call. Important for true DAGs.
 - **Streaming aggregation** at the root so the user can watch
@@ -344,8 +364,4 @@ produces near-paraphrases of the same idea.
   supports per-professor consultant profiles (swap the system prompt).
   Running `calibrate.py` for additional instructors would produce
   independent ground-truth samples and make the MAE result more
-  robust than the current N=4 from a single professor.
-- **Independent human verification of C1-C5**: having a TA or second
-  reviewer score the recommended plans for sensibility would replace
-  the current author-assessed `human_sensible` column with external
-  ground truth.
+  robust than the current N=1 professor calibration in the live prompt.

@@ -1,11 +1,8 @@
-"""Executor stub: consumes a recommended-plan JSON produced by main.py
-and emits a concrete, ordered task list a downstream homework-doing
-agent would execute. This closes the loop:
+"""Execution planner: consumes a recommended-plan JSON produced by main.py
+and emits a concrete, ordered task list a downstream implementation
+agent can carry out. This closes the loop:
 
-    ideation explorer  -->  recommended_plan.json  -->  executor  -->  task list
-
-It is intentionally a single-agent stub. Swapping in a real coder /
-writer / grader agent here is the next phase of the project.
+    ideation explorer  -->  recommended_plan.json  -->  executor  -->  task DAG
 
 Usage:
     python -m ideation_explorer.executor outputs/recommended_plans/dummy.json \

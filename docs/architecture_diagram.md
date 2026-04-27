@@ -1,11 +1,12 @@
 # Architecture diagram
 
-Render to PDF with: `pandoc architecture_diagram.md -o architecture_diagram.pdf`
-(needs a Mermaid filter, e.g. `pandoc-mermaid-filter`), or paste the
-Mermaid block into [https://mermaid.live](https://mermaid.live) and
-export as PNG/PDF.
+Rendered PNGs: `arch_component.png` (component/coordination view) and
+`arch_flow.png` (probe/antenna information-flow view) are in `docs/`.
+The PDF is built from those images — see the pandoc command at the bottom.
 
 ## Component / coordination view
+
+![Component and coordination view](arch_component.png)
 
 ```mermaid
 flowchart TD
@@ -37,6 +38,8 @@ flowchart TD
 ```
 
 ## Information-flow view (probe / antenna mental model)
+
+![Information-flow view: probe / antenna mental model](arch_flow.png)
 
 ```mermaid
 flowchart TB

@@ -8,6 +8,7 @@ class AssignmentSpec:
     description: str
     constraints: list[str]
     deadline_days: float
+    min_margin: float = 0.05  # per-assignment confidence threshold; overrides CLI default when higher
 
 
 @dataclass

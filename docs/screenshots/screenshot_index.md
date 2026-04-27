@@ -6,8 +6,9 @@
 | 02_main_flow.png | Rich live dashboard mid-run (ml_notebook, depth=3 options=2): decision tree half-built with yellow "consulting..." leaf nodes and pool progress bar at ~50% | Shows the fan-out / fan-in structure and real-time agentic behavior as it happens | §2 Architecture — ExplorerAgent, ConsultantPool |
 | 03_evidence_view.png | Completed result panel: per-option quality scores, top-two margin, recommended first decision, and consultant feasibility notes propagated to the root | Shows the aggregated evidence a user actually acts on; feasibility notes are the "why" behind the recommendation | §2 Aggregator; §5 Results |
 | 04_history_or_state.png | Trace JSON (outputs/sample_runs/ml_notebook.json) open in terminal — per-call log with role, tokens, latency, history depth for every LLM call in the run | Demonstrates the auditable trail property: every decision is logged and reconstructible | §7 Governance — auditable trail |
-| 05_export_or_artifact.png | Executor task DAG output: 12 ordered tasks with dependencies, time estimates, and 5 risk items generated from the recommended ml_notebook plan | Shows the ideation-to-execution handoff; the DAG is the exported artifact a student would act on | §2 Executor stub; C6 in eval |
+| 05_export_or_artifact.png | Executor task DAG output: 12 ordered tasks with dependencies, time estimates, and 5 risk items generated from the recommended ml_notebook plan | Shows the ideation-to-execution handoff; the DAG is the exported artifact a student would act on | §2 ExecutionPlannerAgent; SYS-2 in eval |
 | 06_evaluation_view.png | eval/evaluation_results.csv rendered as a table — all 7 cases (C1-C7) with outcome, margin, and calibration MAE reduction | The primary evaluation summary view; shows pass/fail/fail_governance distribution and C7 calibration results at a glance | §4 Evaluation setup; §5 Results |
+| 07_failure_case.png | F3 budget-cap + governance refusal: vague assignment with --max-consultations 5, showing pool completing 5 and refusing 22, and the system printing "LOW CONFIDENCE -- recommendation withheld" with reason | Concrete failure + boundary behavior: cost ceiling fires, budget_exhausted flag poisons the tree, advisory withholds the plan | §6 Failure analysis — F3; §5 Governance |
 
 ## Reproduce commands
 
@@ -29,4 +30,10 @@ python -m ideation_explorer.executor \
 
 # 06 — evaluation CSV
 column -t -s, eval/evaluation_results.csv
+
+# 07 — failure case (budget cap + governance refusal)
+python -m ideation_explorer.main --assignment vague --rooms 3 --depth 3 --options 3 \
+  --max-consultations 5 --min-margin 0.05 \
+  --out outputs/sample_runs/vague_budget_capped.json \
+  --plan-out outputs/recommended_plans/vague_budget_capped.json
 ```

@@ -193,7 +193,8 @@ async def run_with_dashboard(
     fake_args.out = out
     fake_args.plan_out = plan_out
 
-    advisory = assess_confidence(root, min_margin)
+    effective_margin = max(min_margin, spec.min_margin)
+    advisory = assess_confidence(root, effective_margin)
     record = build_run_record(spec, root, fake_args, advisory, pool)
 
     console.print("\n[bold]=== Result ===[/bold]")

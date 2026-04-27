@@ -1,7 +1,7 @@
 # Project summary (one-pager)
 
 **Project**: Ideation Explorer
-**Team**: [Member names]
+**Team**: Mohammad Taha Zakir and Jason Liu
 **Track**: A
 
 ## What it is
@@ -40,12 +40,11 @@ refuses low-confidence or budget-exhausted recommendations.
 
 ## Headline result
 
-The system correctly discriminates when assignment constraints bite
-hard (margin 0.100 on the CIFAR-10 case) and *withholds its
-recommendation* when they don't (margin 0.014 on the open-ended
-web-app case, governance gate fires). The vague-spec stress case
-exposed a remaining calibration gap at margin 0.064 — documented as
-F2 and tracked as an open item.
+The system correctly discriminates when constraints bite hard (margin 0.100 on
+the CIFAR-10 case) and *withholds its recommendation* when evidence is thin
+(governance gate fires on both near-tied and vague-spec cases). Annotator
+calibration across 5 graders reduced consultant scope_fit MAE from 0.21 to
+0.14 (37%), with every grader rating at least one generated plan 5/5 scope_fit.
 
 ## Where to look
 
@@ -55,4 +54,4 @@ F2 and tracked as an open item.
 - **Evaluation**: [eval/test_cases.csv](../eval/test_cases.csv),
   [eval/evaluation_results.csv](../eval/evaluation_results.csv)
 - **Failures**: [eval/failure_log.md](../eval/failure_log.md)
-- **Traces**: [outputs/runs/](../outputs/runs/)
+- **Traces**: [outputs/sample_runs/](../outputs/sample_runs/)

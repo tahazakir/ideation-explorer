@@ -1,0 +1,20 @@
+# environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Claude Code local settings (permissions are machine-specific)
+.claude/settings.local.json
+
+# Internal memory (not part of the project)
+memory/
+
+# Video script (personal notes, not submission material)
+script.md

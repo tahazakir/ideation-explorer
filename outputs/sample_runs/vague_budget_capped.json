@@ -17,24 +17,24 @@
     "min_margin": 0.05
   },
   "metrics": {
-    "wall_time_s": 12.523354768753052,
+    "wall_time_s": 17.240582942962646,
     "total_calls": 18,
     "by_role": {
       "option_generator": {
         "n": 13,
-        "input_tokens": 3749,
-        "output_tokens": 1178,
-        "duration_s": 22.387958526611328
+        "input_tokens": 3782,
+        "output_tokens": 1212,
+        "duration_s": 20.18576717376709
       },
       "consultant": {
         "n": 5,
-        "input_tokens": 5145,
-        "output_tokens": 1419,
-        "duration_s": 19.75497555732727
+        "input_tokens": 5181,
+        "output_tokens": 2113,
+        "duration_s": 29.58832597732544
       }
     },
-    "total_input_tokens": 8894,
-    "total_output_tokens": 2597
+    "total_input_tokens": 8963,
+    "total_output_tokens": 3325
   },
   "pool": {
     "completed": 5,
@@ -43,51 +43,51 @@
   "advisory": {
     "low_confidence": true,
     "refused": true,
-    "margin": 0.396,
+    "margin": 0.09666666666666668,
     "budget_exhausted": true,
     "reason": "consultant budget exhausted; some leaves were not evaluated"
   },
   "recommended_plan": [],
   "root": {
     "history": [],
-    "decision": "Primary AI application domain",
+    "decision": "AI application domain",
     "is_leaf": false,
     "verdict": {
-      "quality": 0.396,
-      "scope_fit": 0.29,
-      "notes": "This plan fails on two fronts: it's a generic time-series forecasting project with no domain specificity or emergent complexity\u2014the kind of tutorial application that teaches mechanics but not systems thinking\u2014and the framing is so broad that it reads as 'I haven't decided what I'm building yet.' Stock price or traffic forecasting in 14 days will either be a shallow notebook exercise (ARIMA/LSTM on public data) or dangerously out of scope if you try to add real novelty. Anand expects you to commit to a concrete question and a modeling choice that creates conceptual richness, not a checklist of possible datasets.",
+      "quality": 0.34199999999999997,
+      "scope_fit": 0.22999999999999998,
+      "notes": "This plan mistakes tool availability for project scope. Running Stable Diffusion locally is a 2-hour setup task, not a 14-day project. Without a clear problem, audience, or evaluation framework, you're building a demo, not demonstrating systems thinking. Either anchor on a specific domain where image generation solves a real problem (e.g., architectural iteration loops, design feedback cycles) or commit to measuring emergent behavior\u2014as written, this is a tutorial completion, not a project.",
       "n_consultations": 5,
-      "quality_stddev": 0.18667619023324855,
+      "quality_stddev": 0.17040981829941462,
       "budget_exhausted": true
     },
-    "chosen_best_option": "Analytical/predictive (classification, forecasting, insights)",
+    "chosen_best_option": "Generative (text, image, code, music generation)",
     "branches": [
       {
-        "option": "Generative/creative (text, images, code, etc.)",
+        "option": "Generative (text, image, code, music generation)",
         "child": {
           "history": [
-            "Generative/creative (text, images, code, etc.)"
+            "Generative (text, image, code, music generation)"
           ],
-          "decision": "AI modality and tool choice",
+          "decision": "Specific generative modality and use case",
           "is_leaf": false,
           "verdict": {
-            "quality": 0.0,
-            "scope_fit": 0.0,
-            "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-            "n_consultations": 0,
-            "quality_stddev": 0.0,
+            "quality": 0.4,
+            "scope_fit": 0.3,
+            "notes": "This plan mistakes tool availability for project scope. Running Stable Diffusion locally is a 2-hour setup task, not a 14-day project. Without a clear problem, audience, or evaluation framework, you're building a demo, not demonstrating systems thinking. Either anchor on a specific domain where image generation solves a real problem (e.g., architectural iteration loops, design feedback cycles) or commit to measuring emergent behavior\u2014as written, this is a tutorial completion, not a project.",
+            "n_consultations": 2,
+            "quality_stddev": 0.1885618083164127,
             "budget_exhausted": true
           },
-          "chosen_best_option": "Text generation (LLM-based: ChatGPT, Claude, open-source models)",
+          "chosen_best_option": "Image generation (e.g., style transfer tool, art generator, visual effect app)",
           "branches": [
             {
-              "option": "Text generation (LLM-based: ChatGPT, Claude, open-source models)",
+              "option": "Text generation (e.g., interactive story, chatbot, writing assistant)",
               "child": {
                 "history": [
-                  "Generative/creative (text, images, code, etc.)",
-                  "Text generation (LLM-based: ChatGPT, Claude, open-source models)"
+                  "Generative (text, image, code, music generation)",
+                  "Text generation (e.g., interactive story, chatbot, writing assistant)"
                 ],
-                "decision": "Target use case / application domain",
+                "decision": "Specific application domain",
                 "is_leaf": false,
                 "verdict": {
                   "quality": 0.0,
@@ -97,15 +97,15 @@
                   "quality_stddev": 0.0,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "Interactive creative tool (e.g., story generator, poetry assistant, worldbuilding helper)",
+                "chosen_best_option": "Interactive story/game (user-driven narrative with AI-generated plot branches)",
                 "branches": [
                   {
-                    "option": "Interactive creative tool (e.g., story generator, poetry assistant, worldbuilding helper)",
+                    "option": "Interactive story/game (user-driven narrative with AI-generated plot branches)",
                     "child": {
                       "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Text generation (LLM-based: ChatGPT, Claude, open-source models)",
-                        "Interactive creative tool (e.g., story generator, poetry assistant, worldbuilding helper)"
+                        "Generative (text, image, code, music generation)",
+                        "Text generation (e.g., interactive story, chatbot, writing assistant)",
+                        "Interactive story/game (user-driven narrative with AI-generated plot branches)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -122,12 +122,12 @@
                     }
                   },
                   {
-                    "option": "Content production pipeline (e.g., auto-generate blog posts, social media captions, documentation)",
+                    "option": "Writing assistant tool (AI helps refine/generate content for a specific genre or purpose)",
                     "child": {
                       "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Text generation (LLM-based: ChatGPT, Claude, open-source models)",
-                        "Content production pipeline (e.g., auto-generate blog posts, social media captions, documentation)"
+                        "Generative (text, image, code, music generation)",
+                        "Text generation (e.g., interactive story, chatbot, writing assistant)",
+                        "Writing assistant tool (AI helps refine/generate content for a specific genre or purpose)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -144,12 +144,12 @@
                     }
                   },
                   {
-                    "option": "Educational or analytical tool (e.g., tutor, code explainer, research summarizer)",
+                    "option": "Chatbot with a defined persona (e.g., tutor, creative collaborator, expert in a domain)",
                     "child": {
                       "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Text generation (LLM-based: ChatGPT, Claude, open-source models)",
-                        "Educational or analytical tool (e.g., tutor, code explainer, research summarizer)"
+                        "Generative (text, image, code, music generation)",
+                        "Text generation (e.g., interactive story, chatbot, writing assistant)",
+                        "Chatbot with a defined persona (e.g., tutor, creative collaborator, expert in a domain)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -169,235 +169,38 @@
               }
             },
             {
-              "option": "Image generation (Diffusion models: DALL-E, Midjourney, Stable Diffusion)",
+              "option": "Image generation (e.g., style transfer tool, art generator, visual effect app)",
               "child": {
                 "history": [
-                  "Generative/creative (text, images, code, etc.)",
-                  "Image generation (Diffusion models: DALL-E, Midjourney, Stable Diffusion)"
+                  "Generative (text, image, code, music generation)",
+                  "Image generation (e.g., style transfer tool, art generator, visual effect app)"
                 ],
-                "decision": "Application/Use Case",
+                "decision": "Image generation approach/model",
                 "is_leaf": false,
                 "verdict": {
-                  "quality": 0.0,
-                  "scope_fit": 0.0,
-                  "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                  "n_consultations": 0,
-                  "quality_stddev": 0.0,
+                  "quality": 0.4,
+                  "scope_fit": 0.3,
+                  "notes": "This plan mistakes tool availability for project scope. Running Stable Diffusion locally is a 2-hour setup task, not a 14-day project. Without a clear problem, audience, or evaluation framework, you're building a demo, not demonstrating systems thinking. Either anchor on a specific domain where image generation solves a real problem (e.g., architectural iteration loops, design feedback cycles) or commit to measuring emergent behavior\u2014as written, this is a tutorial completion, not a project.",
+                  "n_consultations": 2,
+                  "quality_stddev": 0.19293061504650377,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "Interactive tool (e.g., style transfer generator, prompt engineering UI)",
+                "chosen_best_option": "Run open-source model locally (Stable Diffusion, ControlNet)",
                 "branches": [
                   {
-                    "option": "Interactive tool (e.g., style transfer generator, prompt engineering UI)",
+                    "option": "Use a pre-built API (DALL-E, Midjourney, Stable Diffusion API)",
                     "child": {
                       "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Image generation (Diffusion models: DALL-E, Midjourney, Stable Diffusion)",
-                        "Interactive tool (e.g., style transfer generator, prompt engineering UI)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Content creation pipeline (e.g., automated visual storytelling, game asset generation)",
-                    "child": {
-                      "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Image generation (Diffusion models: DALL-E, Midjourney, Stable Diffusion)",
-                        "Content creation pipeline (e.g., automated visual storytelling, game asset generation)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Analytical/curatorial project (e.g., visualize trends, compare model outputs, dataset exploration)",
-                    "child": {
-                      "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Image generation (Diffusion models: DALL-E, Midjourney, Stable Diffusion)",
-                        "Analytical/curatorial project (e.g., visualize trends, compare model outputs, dataset exploration)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "option": "Multimodal (combining text + image, or video synthesis)",
-              "child": {
-                "history": [
-                  "Generative/creative (text, images, code, etc.)",
-                  "Multimodal (combining text + image, or video synthesis)"
-                ],
-                "decision": "Primary use case / application domain",
-                "is_leaf": false,
-                "verdict": {
-                  "quality": 0.0,
-                  "scope_fit": 0.0,
-                  "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                  "n_consultations": 0,
-                  "quality_stddev": 0.0,
-                  "budget_exhausted": true
-                },
-                "chosen_best_option": "Creative tool (e.g., story-to-storyboard generator, lyric-to-music video)",
-                "branches": [
-                  {
-                    "option": "Creative tool (e.g., story-to-storyboard generator, lyric-to-music video)",
-                    "child": {
-                      "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Multimodal (combining text + image, or video synthesis)",
-                        "Creative tool (e.g., story-to-storyboard generator, lyric-to-music video)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Interactive experience (e.g., chatbot with image generation, AI co-creator game)",
-                    "child": {
-                      "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Multimodal (combining text + image, or video synthesis)",
-                        "Interactive experience (e.g., chatbot with image generation, AI co-creator game)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Data transformation pipeline (e.g., document-to-interactive slideshow, audio transcript-to-illustrated summary)",
-                    "child": {
-                      "history": [
-                        "Generative/creative (text, images, code, etc.)",
-                        "Multimodal (combining text + image, or video synthesis)",
-                        "Data transformation pipeline (e.g., document-to-interactive slideshow, audio transcript-to-illustrated summary)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "option": "Analytical/predictive (classification, forecasting, insights)",
-        "child": {
-          "history": [
-            "Analytical/predictive (classification, forecasting, insights)"
-          ],
-          "decision": "Problem domain or dataset choice",
-          "is_leaf": false,
-          "verdict": {
-            "quality": 0.396,
-            "scope_fit": 0.29,
-            "notes": "This plan fails on two fronts: it's a generic time-series forecasting project with no domain specificity or emergent complexity\u2014the kind of tutorial application that teaches mechanics but not systems thinking\u2014and the framing is so broad that it reads as 'I haven't decided what I'm building yet.' Stock price or traffic forecasting in 14 days will either be a shallow notebook exercise (ARIMA/LSTM on public data) or dangerously out of scope if you try to add real novelty. Anand expects you to commit to a concrete question and a modeling choice that creates conceptual richness, not a checklist of possible datasets.",
-            "n_consultations": 5,
-            "quality_stddev": 0.18571849133753848,
-            "budget_exhausted": true
-          },
-          "chosen_best_option": "Time-series forecasting (stock prices, weather, traffic, etc.)",
-          "branches": [
-            {
-              "option": "Time-series forecasting (stock prices, weather, traffic, etc.)",
-              "child": {
-                "history": [
-                  "Analytical/predictive (classification, forecasting, insights)",
-                  "Time-series forecasting (stock prices, weather, traffic, etc.)"
-                ],
-                "decision": "Which time-series domain to forecast",
-                "is_leaf": false,
-                "verdict": {
-                  "quality": 0.4266666666666667,
-                  "scope_fit": 0.31666666666666665,
-                  "notes": "This plan fails on two fronts: it's a generic time-series forecasting project with no domain specificity or emergent complexity\u2014the kind of tutorial application that teaches mechanics but not systems thinking\u2014and the framing is so broad that it reads as 'I haven't decided what I'm building yet.' Stock price or traffic forecasting in 14 days will either be a shallow notebook exercise (ARIMA/LSTM on public data) or dangerously out of scope if you try to add real novelty. Anand expects you to commit to a concrete question and a modeling choice that creates conceptual richness, not a checklist of possible datasets.",
-                  "n_consultations": 3,
-                  "quality_stddev": 0.05557777333511023,
-                  "budget_exhausted": false
-                },
-                "chosen_best_option": "Traffic flow or transit demand",
-                "branches": [
-                  {
-                    "option": "Stock/crypto prices (financial markets)",
-                    "child": {
-                      "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Time-series forecasting (stock prices, weather, traffic, etc.)",
-                        "Stock/crypto prices (financial markets)"
+                        "Generative (text, image, code, music generation)",
+                        "Image generation (e.g., style transfer tool, art generator, visual effect app)",
+                        "Use a pre-built API (DALL-E, Midjourney, Stable Diffusion API)"
                       ],
                       "decision": null,
                       "is_leaf": true,
                       "verdict": {
                         "quality": 0.35,
                         "scope_fit": 0.25,
-                        "notes": "This plan has no specificity\u2014'time-series forecasting of stock prices' is a well-worn ML tutorial with negligible novelty, and the vague framing ('something cool') suggests the student hasn't committed to a real modeling question or domain insight. Even with 14 days, forecasting financial markets without a clear hypothesis, backtesting protocol, or responsible AI guardrails will produce either a generic sklearn pipeline or overfit noise; neither demonstrates systems thinking or intellectual rigor. The plan needs to anchor on a specific, defensible research question (e.g., 'Does sentiment analysis improve short-term volatility forecasting?') and commit to honest evaluation of failure modes.",
+                        "notes": "This plan mistakes 'interesting' for 'easy.' Wrapping a pre-built API with minimal domain logic is not a systems thinking project\u2014it's glue code. With 14 days, you should be modeling *how* something works (a causal system, agent dynamics, or feedback loops), not just piping data through someone else's black box. If you want to use generative AI, build a system that *reasons* about its outputs or explores emergent behavior under constraints.",
                         "n_consultations": 1,
                         "quality_stddev": 0.0,
                         "budget_exhausted": false
@@ -407,19 +210,19 @@
                     }
                   },
                   {
-                    "option": "Weather patterns (temperature, precipitation)",
+                    "option": "Run open-source model locally (Stable Diffusion, ControlNet)",
                     "child": {
                       "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Time-series forecasting (stock prices, weather, traffic, etc.)",
-                        "Weather patterns (temperature, precipitation)"
+                        "Generative (text, image, code, music generation)",
+                        "Image generation (e.g., style transfer tool, art generator, visual effect app)",
+                        "Run open-source model locally (Stable Diffusion, ControlNet)"
                       ],
                       "decision": null,
                       "is_leaf": true,
                       "verdict": {
                         "quality": 0.45,
                         "scope_fit": 0.35,
-                        "notes": "Weather forecasting is a well-trodden path with readily available datasets and pre-built models\u2014it reads as a textbook exercise rather than something that demonstrates novel systems thinking or responsible AI reasoning. The plan lacks specificity on *which* weather patterns, *what* novel angle or stakeholder problem justifies the model, and *how* the student will avoid simply wrapping an existing forecast API. Even with 14 days, this needs a conceptual anchor (e.g., How does forecast uncertainty propagate into farmer decisions? How do competing stakeholders use conflicting forecasts?) to move beyond a data-science kata.",
+                        "notes": "This plan mistakes tool availability for project scope. Running Stable Diffusion locally is a 2-hour setup task, not a 14-day project. Without a clear problem, audience, or evaluation framework, you're building a demo, not demonstrating systems thinking. Either anchor on a specific domain where image generation solves a real problem (e.g., architectural iteration loops, design feedback cycles) or commit to measuring emergent behavior\u2014as written, this is a tutorial completion, not a project.",
                         "n_consultations": 1,
                         "quality_stddev": 0.0,
                         "budget_exhausted": false
@@ -429,22 +232,22 @@
                     }
                   },
                   {
-                    "option": "Traffic flow or transit demand",
+                    "option": "Fine-tune or build custom model on specific dataset",
                     "child": {
                       "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Time-series forecasting (stock prices, weather, traffic, etc.)",
-                        "Traffic flow or transit demand"
+                        "Generative (text, image, code, music generation)",
+                        "Image generation (e.g., style transfer tool, art generator, visual effect app)",
+                        "Fine-tune or build custom model on specific dataset"
                       ],
                       "decision": null,
                       "is_leaf": true,
                       "verdict": {
-                        "quality": 0.48,
-                        "scope_fit": 0.35,
-                        "notes": "This plan fails on two fronts: it's a generic time-series forecasting project with no domain specificity or emergent complexity\u2014the kind of tutorial application that teaches mechanics but not systems thinking\u2014and the framing is so broad that it reads as 'I haven't decided what I'm building yet.' Stock price or traffic forecasting in 14 days will either be a shallow notebook exercise (ARIMA/LSTM on public data) or dangerously out of scope if you try to add real novelty. Anand expects you to commit to a concrete question and a modeling choice that creates conceptual richness, not a checklist of possible datasets.",
-                        "n_consultations": 1,
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
                         "quality_stddev": 0.0,
-                        "budget_exhausted": false
+                        "budget_exhausted": true
                       },
                       "chosen_best_option": null,
                       "branches": []
@@ -454,13 +257,13 @@
               }
             },
             {
-              "option": "Classification task (sentiment analysis, image recognition, text categorization)",
+              "option": "Code generation (e.g., bug fixer, boilerplate generator, documentation writer)",
               "child": {
                 "history": [
-                  "Analytical/predictive (classification, forecasting, insights)",
-                  "Classification task (sentiment analysis, image recognition, text categorization)"
+                  "Generative (text, image, code, music generation)",
+                  "Code generation (e.g., bug fixer, boilerplate generator, documentation writer)"
                 ],
-                "decision": "Data domain and source",
+                "decision": "Target user and use case",
                 "is_leaf": false,
                 "verdict": {
                   "quality": 0.0,
@@ -470,15 +273,15 @@
                   "quality_stddev": 0.0,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "Text-based (e.g., sentiment from reviews, tweets, or comments)",
+                "chosen_best_option": "Developer tool (e.g., IDE plugin for code completion, refactoring suggestions)",
                 "branches": [
                   {
-                    "option": "Text-based (e.g., sentiment from reviews, tweets, or comments)",
+                    "option": "Developer tool (e.g., IDE plugin for code completion, refactoring suggestions)",
                     "child": {
                       "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Classification task (sentiment analysis, image recognition, text categorization)",
-                        "Text-based (e.g., sentiment from reviews, tweets, or comments)"
+                        "Generative (text, image, code, music generation)",
+                        "Code generation (e.g., bug fixer, boilerplate generator, documentation writer)",
+                        "Developer tool (e.g., IDE plugin for code completion, refactoring suggestions)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -495,12 +298,12 @@
                     }
                   },
                   {
-                    "option": "Image-based (e.g., object detection, style classification, or quality assessment)",
+                    "option": "Learning aid (e.g., generates coding tutorials, explains buggy code to beginners)",
                     "child": {
                       "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Classification task (sentiment analysis, image recognition, text categorization)",
-                        "Image-based (e.g., object detection, style classification, or quality assessment)"
+                        "Generative (text, image, code, music generation)",
+                        "Code generation (e.g., bug fixer, boilerplate generator, documentation writer)",
+                        "Learning aid (e.g., generates coding tutorials, explains buggy code to beginners)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -517,100 +320,12 @@
                     }
                   },
                   {
-                    "option": "Structured data (e.g., tabular dataset for predicting user behavior or categorical patterns)",
+                    "option": "Automation tool (e.g., generates boilerplate, API clients, test suites from specs)",
                     "child": {
                       "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Classification task (sentiment analysis, image recognition, text categorization)",
-                        "Structured data (e.g., tabular dataset for predicting user behavior or categorical patterns)"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.0,
-                        "scope_fit": 0.0,
-                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
-                        "n_consultations": 0,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": true
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "option": "Data insights/discovery (anomaly detection, clustering, trend analysis)",
-              "child": {
-                "history": [
-                  "Analytical/predictive (classification, forecasting, insights)",
-                  "Data insights/discovery (anomaly detection, clustering, trend analysis)"
-                ],
-                "decision": "Data domain and source",
-                "is_leaf": false,
-                "verdict": {
-                  "quality": 0.35,
-                  "scope_fit": 0.25,
-                  "notes": "This plan is a shopping list of techniques, not a project. There's no focal problem, no clear deliverable, and no systems thinking\u2014just 'pick a dataset, run some ML.' Anand expects you to define what question you're actually answering and for whom. The vagueness will lead to either a shallow notebook or analysis paralysis.",
-                  "n_consultations": 2,
-                  "quality_stddev": 0.1649915822768611,
-                  "budget_exhausted": true
-                },
-                "chosen_best_option": "Public dataset (Kaggle, UCI, etc.) for rapid prototyping",
-                "branches": [
-                  {
-                    "option": "Public dataset (Kaggle, UCI, etc.) for rapid prototyping",
-                    "child": {
-                      "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Data insights/discovery (anomaly detection, clustering, trend analysis)",
-                        "Public dataset (Kaggle, UCI, etc.) for rapid prototyping"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.35,
-                        "scope_fit": 0.25,
-                        "notes": "This plan is a shopping list of techniques, not a project. There's no focal problem, no clear deliverable, and no systems thinking\u2014just 'pick a dataset, run some ML.' Anand expects you to define what question you're actually answering and for whom. The vagueness will lead to either a shallow notebook or analysis paralysis.",
-                        "n_consultations": 1,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": false
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Real-world data collection (scraping, APIs, surveys) for authentic insights",
-                    "child": {
-                      "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Data insights/discovery (anomaly detection, clustering, trend analysis)",
-                        "Real-world data collection (scraping, APIs, surveys) for authentic insights"
-                      ],
-                      "decision": null,
-                      "is_leaf": true,
-                      "verdict": {
-                        "quality": 0.35,
-                        "scope_fit": 0.25,
-                        "notes": "This is a template, not a plan. You've listed three possible project *categories* with no commitment to a domain, dataset, problem statement, or deliverable form. Anand will ask: What are you actually building? Who is it for? What specific AI method solves a real problem here? Without these anchors, you cannot execute\u2014you'll spend days deciding what to do instead of doing it. Pick one concrete application (e.g., 'anomaly detection in [specific domain] data via [specific method]') and scope it to 14 days.",
-                        "n_consultations": 1,
-                        "quality_stddev": 0.0,
-                        "budget_exhausted": false
-                      },
-                      "chosen_best_option": null,
-                      "branches": []
-                    }
-                  },
-                  {
-                    "option": "Synthetic or personal data (your own logs, files) for novel angle",
-                    "child": {
-                      "history": [
-                        "Analytical/predictive (classification, forecasting, insights)",
-                        "Data insights/discovery (anomaly detection, clustering, trend analysis)",
-                        "Synthetic or personal data (your own logs, files) for novel angle"
+                        "Generative (text, image, code, music generation)",
+                        "Code generation (e.g., bug fixer, boilerplate generator, documentation writer)",
+                        "Automation tool (e.g., generates boilerplate, API clients, test suites from specs)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -633,12 +348,12 @@
         }
       },
       {
-        "option": "Interactive/conversational (chatbot, assistant, game)",
+        "option": "Analytical (classification, prediction, optimization, insights from data)",
         "child": {
           "history": [
-            "Interactive/conversational (chatbot, assistant, game)"
+            "Analytical (classification, prediction, optimization, insights from data)"
           ],
-          "decision": "Domain/problem space for the chatbot",
+          "decision": "Data source and domain",
           "is_leaf": false,
           "verdict": {
             "quality": 0.0,
@@ -648,16 +363,16 @@
             "quality_stddev": 0.0,
             "budget_exhausted": true
           },
-          "chosen_best_option": "Educational assistant (tutor for a specific subject)",
+          "chosen_best_option": "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task",
           "branches": [
             {
-              "option": "Educational assistant (tutor for a specific subject)",
+              "option": "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task",
               "child": {
                 "history": [
-                  "Interactive/conversational (chatbot, assistant, game)",
-                  "Educational assistant (tutor for a specific subject)"
+                  "Analytical (classification, prediction, optimization, insights from data)",
+                  "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task"
                 ],
-                "decision": "Subject domain and target audience level",
+                "decision": "Problem domain / dataset choice",
                 "is_leaf": false,
                 "verdict": {
                   "quality": 0.0,
@@ -667,15 +382,15 @@
                   "quality_stddev": 0.0,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "High school / early undergraduate STEM (physics, chemistry, calculus)",
+                "chosen_best_option": "Tabular prediction (e.g., UCI ML datasets: income, heart disease, credit approval)",
                 "branches": [
                   {
-                    "option": "High school / early undergraduate STEM (physics, chemistry, calculus)",
+                    "option": "Tabular prediction (e.g., UCI ML datasets: income, heart disease, credit approval)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Educational assistant (tutor for a specific subject)",
-                        "High school / early undergraduate STEM (physics, chemistry, calculus)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task",
+                        "Tabular prediction (e.g., UCI ML datasets: income, heart disease, credit approval)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -692,12 +407,12 @@
                     }
                   },
                   {
-                    "option": "Professional/technical skill (programming, data science, software engineering)",
+                    "option": "Image classification (e.g., CIFAR-10, custom Kaggle image dataset)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Educational assistant (tutor for a specific subject)",
-                        "Professional/technical skill (programming, data science, software engineering)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task",
+                        "Image classification (e.g., CIFAR-10, custom Kaggle image dataset)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -714,12 +429,12 @@
                     }
                   },
                   {
-                    "option": "Language learning (conversational practice for a specific language)",
+                    "option": "Text/NLP classification (e.g., sentiment analysis, spam detection, topic classification)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Educational assistant (tutor for a specific subject)",
-                        "Language learning (conversational practice for a specific language)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Use an existing public dataset (e.g. Kaggle, UCI ML) for a classification or prediction task",
+                        "Text/NLP classification (e.g., sentiment analysis, spam detection, topic classification)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -739,13 +454,13 @@
               }
             },
             {
-              "option": "Creative/entertainment tool (storytelling, game, writing partner)",
+              "option": "Scrape or collect real-world data yourself (e.g. social media, web, sensors) to analyze",
               "child": {
                 "history": [
-                  "Interactive/conversational (chatbot, assistant, game)",
-                  "Creative/entertainment tool (storytelling, game, writing partner)"
+                  "Analytical (classification, prediction, optimization, insights from data)",
+                  "Scrape or collect real-world data yourself (e.g. social media, web, sensors) to analyze"
                 ],
-                "decision": "Specific creative domain and interaction model",
+                "decision": "Data domain and source",
                 "is_leaf": false,
                 "verdict": {
                   "quality": 0.0,
@@ -755,15 +470,15 @@
                   "quality_stddev": 0.0,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "Story/narrative generator (user prompts AI to create branching stories, user makes choices)",
+                "chosen_best_option": "Social media sentiment/trends (Twitter, Reddit, YouTube comments)",
                 "branches": [
                   {
-                    "option": "Story/narrative generator (user prompts AI to create branching stories, user makes choices)",
+                    "option": "Social media sentiment/trends (Twitter, Reddit, YouTube comments)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Creative/entertainment tool (storytelling, game, writing partner)",
-                        "Story/narrative generator (user prompts AI to create branching stories, user makes choices)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Scrape or collect real-world data yourself (e.g. social media, web, sensors) to analyze",
+                        "Social media sentiment/trends (Twitter, Reddit, YouTube comments)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -780,12 +495,12 @@
                     }
                   },
                   {
-                    "option": "Game master assistant (AI generates quests/scenarios for tabletop RPG or text adventure)",
+                    "option": "Web scraping for product/price data (e.g., e-commerce, housing listings)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Creative/entertainment tool (storytelling, game, writing partner)",
-                        "Game master assistant (AI generates quests/scenarios for tabletop RPG or text adventure)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Scrape or collect real-world data yourself (e.g. social media, web, sensors) to analyze",
+                        "Web scraping for product/price data (e.g., e-commerce, housing listings)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -802,12 +517,12 @@
                     }
                   },
                   {
-                    "option": "Creative writing partner (AI co-writes with user, iteratively refines prose/dialogue)",
+                    "option": "Custom sensor data collection (e.g., environmental monitoring, traffic patterns)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Creative/entertainment tool (storytelling, game, writing partner)",
-                        "Creative writing partner (AI co-writes with user, iteratively refines prose/dialogue)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Scrape or collect real-world data yourself (e.g. social media, web, sensors) to analyze",
+                        "Custom sensor data collection (e.g., environmental monitoring, traffic patterns)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -827,13 +542,13 @@
               }
             },
             {
-              "option": "Practical utility (productivity assistant, code helper, research tool)",
+              "option": "Work with a domain-specific problem you have direct access to (e.g. personal finance, fitness, work data)",
               "child": {
                 "history": [
-                  "Interactive/conversational (chatbot, assistant, game)",
-                  "Practical utility (productivity assistant, code helper, research tool)"
+                  "Analytical (classification, prediction, optimization, insights from data)",
+                  "Work with a domain-specific problem you have direct access to (e.g. personal finance, fitness, work data)"
                 ],
-                "decision": "Specific AI capability to emphasize",
+                "decision": "What domain-specific problem to focus on",
                 "is_leaf": false,
                 "verdict": {
                   "quality": 0.0,
@@ -843,15 +558,15 @@
                   "quality_stddev": 0.0,
                   "budget_exhausted": true
                 },
-                "chosen_best_option": "Code generation & debugging (e.g., pair programmer, bug fixer)",
+                "chosen_best_option": "Personal finance (budgeting, spending patterns, investment recommendations)",
                 "branches": [
                   {
-                    "option": "Code generation & debugging (e.g., pair programmer, bug fixer)",
+                    "option": "Personal finance (budgeting, spending patterns, investment recommendations)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Practical utility (productivity assistant, code helper, research tool)",
-                        "Code generation & debugging (e.g., pair programmer, bug fixer)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Work with a domain-specific problem you have direct access to (e.g. personal finance, fitness, work data)",
+                        "Personal finance (budgeting, spending patterns, investment recommendations)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -868,12 +583,12 @@
                     }
                   },
                   {
-                    "option": "Information synthesis & retrieval (e.g., research summarizer, fact checker)",
+                    "option": "Fitness/health data (workout optimization, nutrition analysis, progress prediction)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Practical utility (productivity assistant, code helper, research tool)",
-                        "Information synthesis & retrieval (e.g., research summarizer, fact checker)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Work with a domain-specific problem you have direct access to (e.g. personal finance, fitness, work data)",
+                        "Fitness/health data (workout optimization, nutrition analysis, progress prediction)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -890,12 +605,297 @@
                     }
                   },
                   {
-                    "option": "Domain-specific reasoning (e.g., math tutor, legal advisor, medical symptom assistant)",
+                    "option": "Work/productivity data (time tracking analysis, task prioritization, burnout prediction)",
                     "child": {
                       "history": [
-                        "Interactive/conversational (chatbot, assistant, game)",
-                        "Practical utility (productivity assistant, code helper, research tool)",
-                        "Domain-specific reasoning (e.g., math tutor, legal advisor, medical symptom assistant)"
+                        "Analytical (classification, prediction, optimization, insights from data)",
+                        "Work with a domain-specific problem you have direct access to (e.g. personal finance, fitness, work data)",
+                        "Work/productivity data (time tracking analysis, task prioritization, burnout prediction)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Interactive (chatbot, game, creative assistant, personalized tool)",
+        "child": {
+          "history": [
+            "Interactive (chatbot, game, creative assistant, personalized tool)"
+          ],
+          "decision": "What AI capability to build around",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.30333333333333334,
+            "scope_fit": 0.18333333333333335,
+            "notes": "This is a list of application categories, not a project plan. There is no specified model, no clear scope boundary, no defined deliverable, and no demonstrated systems thinking. Anand expects a causal model (CLD or ABM) with a specific domain and measurable emergent behavior\u2014not a tooling exercise. Even with 14 days, this plan lacks the rigor to be evaluated for feasibility.",
+            "n_consultations": 3,
+            "quality_stddev": 0.1429927046399463,
+            "budget_exhausted": true
+          },
+          "chosen_best_option": "Generative content (text, images, code, stories)",
+          "branches": [
+            {
+              "option": "Natural language understanding (conversational AI, Q&A, text analysis)",
+              "child": {
+                "history": [
+                  "Interactive (chatbot, game, creative assistant, personalized tool)",
+                  "Natural language understanding (conversational AI, Q&A, text analysis)"
+                ],
+                "decision": "Use case domain",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.0,
+                  "scope_fit": 0.0,
+                  "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                  "n_consultations": 0,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": true
+                },
+                "chosen_best_option": "Educational/learning assistant (tutoring, explanation, study aid)",
+                "branches": [
+                  {
+                    "option": "Educational/learning assistant (tutoring, explanation, study aid)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Natural language understanding (conversational AI, Q&A, text analysis)",
+                        "Educational/learning assistant (tutoring, explanation, study aid)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Creative writing/storytelling tool (collaborative narrative, prompt expansion)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Natural language understanding (conversational AI, Q&A, text analysis)",
+                        "Creative writing/storytelling tool (collaborative narrative, prompt expansion)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Domain-specific expert advisor (mental health support, coding help, career guidance)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Natural language understanding (conversational AI, Q&A, text analysis)",
+                        "Domain-specific expert advisor (mental health support, coding help, career guidance)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Generative content (text, images, code, stories)",
+              "child": {
+                "history": [
+                  "Interactive (chatbot, game, creative assistant, personalized tool)",
+                  "Generative content (text, images, code, stories)"
+                ],
+                "decision": "Which generative modality to prioritize",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.30333333333333334,
+                  "scope_fit": 0.18333333333333335,
+                  "notes": "This is a list of application categories, not a project plan. There is no specified model, no clear scope boundary, no defined deliverable, and no demonstrated systems thinking. Anand expects a causal model (CLD or ABM) with a specific domain and measurable emergent behavior\u2014not a tooling exercise. Even with 14 days, this plan lacks the rigor to be evaluated for feasibility.",
+                  "n_consultations": 3,
+                  "quality_stddev": 0.03299831645537219,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": "Image generation (visual art tool, style transfer, creative design assistant)",
+                "branches": [
+                  {
+                    "option": "Text generation (chatbot, story generator, interactive fiction)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Generative content (text, images, code, stories)",
+                        "Text generation (chatbot, story generator, interactive fiction)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.28,
+                        "scope_fit": 0.15,
+                        "notes": "This is a list of possible project types, not a plan. There is no declared model, no system to understand, no scenario comparison, and no clear deliverable. Anand requires you to pick one specific thing to build and explain *why* it's interesting as a systems problem\u2014not just that it uses AI. A chatbot wrapper around an LLM API is not a modeling project; it's a demo. If you want to model something (e.g., how conversational AI shapes team communication dynamics, or how a content generation pipeline's failure modes propagate), say so explicitly and scope the model itself.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Image generation (visual art tool, style transfer, creative design assistant)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Generative content (text, images, code, stories)",
+                        "Image generation (visual art tool, style transfer, creative design assistant)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.35,
+                        "scope_fit": 0.25,
+                        "notes": "This is a list of application categories, not a project plan. There is no specified model, no clear scope boundary, no defined deliverable, and no demonstrated systems thinking. Anand expects a causal model (CLD or ABM) with a specific domain and measurable emergent behavior\u2014not a tooling exercise. Even with 14 days, this plan lacks the rigor to be evaluated for feasibility.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Code generation (programming tutor, code explainer, automated bug fixer)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Generative content (text, images, code, stories)",
+                        "Code generation (programming tutor, code explainer, automated bug fixer)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.28,
+                        "scope_fit": 0.15,
+                        "notes": "This is a list of three unrelated product categories, not a project plan. There is no specific problem, no chosen AI approach, no model or system design, and no clear deliverable. Anand will ask: Which one are you building? What is the actual technical architecture? How will you evaluate whether it works? Without answers, there is nothing to grade.",
+                        "n_consultations": 1,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": false
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "option": "Classification or prediction (categorization, recommendations, anomaly detection)",
+              "child": {
+                "history": [
+                  "Interactive (chatbot, game, creative assistant, personalized tool)",
+                  "Classification or prediction (categorization, recommendations, anomaly detection)"
+                ],
+                "decision": "Data domain & use case",
+                "is_leaf": false,
+                "verdict": {
+                  "quality": 0.0,
+                  "scope_fit": 0.0,
+                  "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                  "n_consultations": 0,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": true
+                },
+                "chosen_best_option": "User-generated content (e.g., sentiment analysis of social posts, toxic comment detection)",
+                "branches": [
+                  {
+                    "option": "User-generated content (e.g., sentiment analysis of social posts, toxic comment detection)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Classification or prediction (categorization, recommendations, anomaly detection)",
+                        "User-generated content (e.g., sentiment analysis of social posts, toxic comment detection)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Creative/media domain (e.g., image tagging, music mood classification, story genre prediction)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Classification or prediction (categorization, recommendations, anomaly detection)",
+                        "Creative/media domain (e.g., image tagging, music mood classification, story genre prediction)"
+                      ],
+                      "decision": null,
+                      "is_leaf": true,
+                      "verdict": {
+                        "quality": 0.0,
+                        "scope_fit": 0.0,
+                        "notes": "budget exhausted: consultant pool cap reached, leaf not evaluated",
+                        "n_consultations": 0,
+                        "quality_stddev": 0.0,
+                        "budget_exhausted": true
+                      },
+                      "chosen_best_option": null,
+                      "branches": []
+                    }
+                  },
+                  {
+                    "option": "Practical domain (e.g., spam detection, credit risk prediction, disease symptom triage)",
+                    "child": {
+                      "history": [
+                        "Interactive (chatbot, game, creative assistant, personalized tool)",
+                        "Classification or prediction (categorization, recommendations, anomaly detection)",
+                        "Practical domain (e.g., spam detection, credit risk prediction, disease symptom triage)"
                       ],
                       "decision": null,
                       "is_leaf": true,
@@ -924,9 +924,9 @@
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
       "input_tokens": 264,
-      "output_tokens": 80,
-      "duration_s": 1.371056079864502,
-      "started_at": 1777141054.339015,
+      "output_tokens": 79,
+      "duration_s": 1.4988203048706055,
+      "started_at": 1777253861.623659,
       "history_depth": 0,
       "ok": true,
       "error": null
@@ -934,21 +934,10 @@
     {
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 276,
-      "output_tokens": 84,
-      "duration_s": 1.1921958923339844,
-      "started_at": 1777141055.711997,
-      "history_depth": 1,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
       "input_tokens": 277,
-      "output_tokens": 101,
-      "duration_s": 1.4370629787445068,
-      "started_at": 1777141055.710716,
+      "output_tokens": 83,
+      "duration_s": 1.2735941410064697,
+      "started_at": 1777253863.124917,
       "history_depth": 1,
       "ok": true,
       "error": null
@@ -956,10 +945,54 @@
     {
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 295,
-      "output_tokens": 64,
-      "duration_s": 0.9890961647033691,
-      "started_at": 1777141056.904583,
+      "input_tokens": 276,
+      "output_tokens": 98,
+      "duration_s": 1.380542278289795,
+      "started_at": 1777253863.1230779,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 276,
+      "output_tokens": 114,
+      "duration_s": 2.03684401512146,
+      "started_at": 1777253863.124298,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 294,
+      "output_tokens": 86,
+      "duration_s": 1.362441062927246,
+      "started_at": 1777253864.400497,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 298,
+      "output_tokens": 93,
+      "duration_s": 1.4078409671783447,
+      "started_at": 1777253864.505171,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 296,
+      "output_tokens": 81,
+      "duration_s": 1.5420620441436768,
+      "started_at": 1777253864.399051,
       "history_depth": 2,
       "ok": true,
       "error": null
@@ -968,9 +1001,9 @@
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
       "input_tokens": 294,
-      "output_tokens": 90,
-      "duration_s": 1.5526320934295654,
-      "started_at": 1777141056.906354,
+      "output_tokens": 102,
+      "duration_s": 1.7195401191711426,
+      "started_at": 1777253864.401214,
       "history_depth": 2,
       "ok": true,
       "error": null
@@ -978,10 +1011,32 @@
     {
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 293,
-      "output_tokens": 95,
-      "duration_s": 1.6297509670257568,
-      "started_at": 1777141056.90567,
+      "input_tokens": 296,
+      "output_tokens": 98,
+      "duration_s": 1.66457200050354,
+      "started_at": 1777253864.503953,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 299,
+      "output_tokens": 100,
+      "duration_s": 1.7202680110931396,
+      "started_at": 1777253864.506027,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 304,
+      "output_tokens": 88,
+      "duration_s": 1.4121270179748535,
+      "started_at": 1777253865.1629062,
       "history_depth": 2,
       "ok": true,
       "error": null
@@ -990,9 +1045,9 @@
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
       "input_tokens": 305,
-      "output_tokens": 94,
-      "duration_s": 1.57016921043396,
-      "started_at": 1777141057.149653,
+      "output_tokens": 89,
+      "duration_s": 1.4499142169952393,
+      "started_at": 1777253865.1636329,
       "history_depth": 2,
       "ok": true,
       "error": null
@@ -1000,87 +1055,10 @@
     {
       "agent_role": "option_generator",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 302,
-      "output_tokens": 102,
-      "duration_s": 1.5955901145935059,
-      "started_at": 1777141057.148316,
-      "history_depth": 2,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 295,
-      "output_tokens": 109,
-      "duration_s": 1.6986920833587646,
-      "started_at": 1777141057.150497,
-      "history_depth": 2,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 275,
-      "output_tokens": 80,
-      "duration_s": 4.6896820068359375,
-      "started_at": 1777141055.712528,
-      "history_depth": 1,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "consultant",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 1024,
-      "output_tokens": 178,
-      "duration_s": 2.6551222801208496,
-      "started_at": 1777141057.8971388,
-      "history_depth": 3,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "consultant",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 1026,
-      "output_tokens": 170,
-      "duration_s": 2.85709810256958,
-      "started_at": 1777141057.896207,
-      "history_depth": 3,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 292,
-      "output_tokens": 97,
-      "duration_s": 1.452049970626831,
-      "started_at": 1777141060.40521,
-      "history_depth": 2,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 289,
-      "output_tokens": 81,
-      "duration_s": 1.4756019115447998,
-      "started_at": 1777141060.4026492,
-      "history_depth": 2,
-      "ok": true,
-      "error": null
-    },
-    {
-      "agent_role": "option_generator",
-      "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 292,
+      "input_tokens": 303,
       "output_tokens": 101,
-      "duration_s": 1.7343790531158447,
-      "started_at": 1777141060.404044,
+      "duration_s": 1.7172009944915771,
+      "started_at": 1777253865.161581,
       "history_depth": 2,
       "ok": true,
       "error": null
@@ -1088,10 +1066,10 @@
     {
       "agent_role": "consultant",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 1034,
-      "output_tokens": 159,
-      "duration_s": 2.2912559509277344,
-      "started_at": 1777141060.753771,
+      "input_tokens": 1030,
+      "output_tokens": 167,
+      "duration_s": 2.874323844909668,
+      "started_at": 1777253865.763724,
       "history_depth": 3,
       "ok": true,
       "error": null
@@ -1099,10 +1077,10 @@
     {
       "agent_role": "consultant",
       "model": "claude-haiku-4-5-20251001",
-      "input_tokens": 1027,
-      "output_tokens": 429,
-      "duration_s": 5.6711132526397705,
-      "started_at": 1777141057.8947158,
+      "input_tokens": 1032,
+      "output_tokens": 438,
+      "duration_s": 6.466753005981445,
+      "started_at": 1777253865.7653959,
       "history_depth": 3,
       "ok": true,
       "error": null
@@ -1111,13 +1089,35 @@
       "agent_role": "consultant",
       "model": "claude-haiku-4-5-20251001",
       "input_tokens": 1034,
-      "output_tokens": 483,
-      "duration_s": 6.280385971069336,
-      "started_at": 1777141060.552893,
+      "output_tokens": 520,
+      "duration_s": 7.093219995498657,
+      "started_at": 1777253865.766439,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1046,
+      "output_tokens": 472,
+      "duration_s": 6.546476125717163,
+      "started_at": 1777253868.63845,
+      "history_depth": 3,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1039,
+      "output_tokens": 516,
+      "duration_s": 6.607553005218506,
+      "started_at": 1777253872.232625,
       "history_depth": 3,
       "ok": true,
       "error": null
     }
   ],
-  "ts_finished": 1777141066.84029
+  "ts_finished": 1777253878.850209
 }

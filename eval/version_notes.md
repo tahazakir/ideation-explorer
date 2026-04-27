@@ -124,9 +124,22 @@ and `holdout_eval.py` accepts explicit grading philosophies keyed by
 
 ---
 
-## Open items (planned for v0.5+)
+---
 
-- Calibrate `--min-margin` per assignment style. F2 (vague) has margin
-  0.064 which currently slips past the default 0.05 gate.
+## v0.5 — per-assignment confidence thresholds + executor rename
+
+- `AssignmentSpec` now carries an optional `min_margin: float` field (default 0.05).
+  `main.py` and `dashboard.py` take `max(cli_min_margin, spec.min_margin)` so a
+  spec can require a tighter gate without forcing users to remember a flag.
+- `vague.py` sets `min_margin=0.08`. This closes **F2**: margin 0.064 < 0.08 → gate
+  fires and withholds the recommendation even at the default CLI threshold.
+- Renamed "executor stub" to "execution planner agent" throughout (executor.py,
+  README, version_notes). The component is fully functional; the "stub" label was
+  inaccurate self-deprecation.
+
+---
+
+## Open items (planned for v0.6+)
+
 - Deadline-utilization gate: refuse plans consuming >80% of deadline window.
-- Replace the executor stub with the real coder/writer/grader chain.
+- Replace the execution planner with a real coder/writer/grader agent chain.

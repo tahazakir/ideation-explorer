@@ -94,7 +94,8 @@ async def main_async(args):
         max_depth=args.depth, max_options=args.options,
     )
 
-    advisory = assess_confidence(root, args.min_margin)
+    effective_margin = max(args.min_margin, spec.min_margin)
+    advisory = assess_confidence(root, effective_margin)
     record = build_run_record(spec, root, args, advisory, pool)
 
     print("\n=== Result ===")

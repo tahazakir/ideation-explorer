@@ -1,0 +1,146 @@
+{
+  "assignment": {
+    "name": "calibration",
+    "title": "Model AI's effect on one job category",
+    "description": "Build a small agent-based simulation (15-20 workers) that models how AI adoption disrupts and reshapes one job category. The most critical early decision is your implementation tool: NetLogo (the standard ABM platform for this course), a general-purpose language (Python with Mesa), or a spreadsheet (Excel or Google Sheets). After choosing the tool, select a job category and define the emergent mechanism. Compare exactly two scenarios: high automation pressure vs. high worker support. Deliver a 1-page memo and one figure (diagram or screenshot).",
+    "constraints": [
+      "Must compare exactly two scenarios: high automation pressure vs. high worker support.",
+      "15-20 worker agents, at least 3 discrete states, 1 explicit emergent mechanism.",
+      "Must distinguish programmed behavior from emergent outcomes in the interpretation.",
+      "Deliverable: 1-page memo + one simulation figure.",
+      "AI use must be documented with exact prompts and what was changed manually."
+    ],
+    "deadline_days": 7.0
+  },
+  "recommended_plan": [
+    "NetLogo (built-in ABM, visual interface, easy state tracking)",
+    "Data entry clerks: emergent mechanism = productivity cliff (workers compete on speed/accuracy against AI, triggering layoffs when threshold crossed)"
+  ],
+  "execution": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set up NetLogo project structure and environment",
+        "deliverable": "NetLogo file (.nlogo) with basic world setup, 15-20 worker agents initialized with state variables (skill-level, speed, accuracy, employment-status)",
+        "depends_on": []
+      },
+      {
+        "id": 2,
+        "title": "Define worker agent states and transitions",
+        "deliverable": "NetLogo code implementing 3 discrete states: employed, retraining, unemployed; with state-change rules and skill/accuracy attributes tracked per tick",
+        "depends_on": [
+          1
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement productivity cliff emergent mechanism (high automation pressure scenario)",
+        "deliverable": "NetLogo code for Scenario A: AI performance metric, worker performance calculation (speed \u00d7 accuracy), threshold logic triggering layoffs when worker performance < AI baseline, and competitive dynamics visualization",
+        "depends_on": [
+          2
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement high worker support scenario with retraining mechanics",
+        "deliverable": "NetLogo code for Scenario B: alternate rule set where workers below threshold enter retraining state (recover skills over time) instead of layoff; company invests in support programs; track retraining success rate",
+        "depends_on": [
+          2
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Add data collection and metrics tracking",
+        "deliverable": "NetLogo reporters/monitors for: employment rate, average worker skill level, productivity distribution, layoff count (Scenario A) vs. retraining completion rate (Scenario B); export-to-file capability",
+        "depends_on": [
+          3,
+          4
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Run Scenario A (high automation pressure) simulation",
+        "deliverable": "NetLogo simulation output data (CSV or table) from 100+ ticks, screenshot of final state showing employment distribution, productivity cliff visualization",
+        "depends_on": [
+          5
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Run Scenario B (high worker support) simulation",
+        "deliverable": "NetLogo simulation output data (CSV or table) from 100+ ticks, screenshot of final state showing employment/retraining distribution, comparison to Scenario A",
+        "depends_on": [
+          5
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Analyze emergent outcomes and document programmed vs. emergent behavior",
+        "deliverable": "Analysis document (1-2 pages working notes) distinguishing: programmed rules (layoff threshold, retraining mechanics) from emergent patterns (distribution of outcomes, systemic inequality, resilience differences)",
+        "depends_on": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Generate comparison figure (diagram or dual-scenario screenshot)",
+        "deliverable": "High-quality PNG/PDF figure showing side-by-side NetLogo screenshots or line-graph comparison of employment rates, skill distributions, or productivity over time for both scenarios",
+        "depends_on": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Write 1-page executive memo",
+        "deliverable": "Memo (0.9-1.0 page, single-spaced) summarizing: job category (data entry clerks), emergent mechanism (productivity cliff), key findings from both scenarios, policy implications, explicit callout of AI tool use",
+        "depends_on": [
+          8,
+          9
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Document AI use with exact prompts and manual edits",
+        "deliverable": "Appendix or separate text file listing: (a) all prompts given to AI tools (if any used during code generation/analysis), (b) what was accepted vs. manually changed/rewritten, (c) rationale for changes",
+        "depends_on": [
+          10
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Quality check and final packaging",
+        "deliverable": "Final submission package: memo (PDF), figure (PNG/PDF), NetLogo .nlogo file, AI documentation, README with simulation notes",
+        "depends_on": [
+          10,
+          11
+        ]
+      }
+    ],
+    "estimated_total_hours": 28,
+    "open_risks": [
+      "NetLogo learning curve if team unfamiliar; mitigate with 2-3hr tutorial review early (Task 1)",
+      "Productivity cliff mechanism may be too sensitive to threshold tuning; requires iterative parameter testing in Tasks 3\u20134",
+      "Scenario B retraining mechanics may not produce visibly different outcomes if success rate too high; may need 2\u20133 parameter sweeps to calibrate meaningful divergence",
+      "Figure clarity: side-by-side screenshots may be hard to compare; line graphs preferred but require additional export/plotting step not in core NetLogo (Task 9 may need external tool)",
+      "Memo page limit tight; significant compression of findings required in Task 10",
+      "AI documentation requirement (Task 11) retroactive\u2014recommend documenting AI prompts *during* task execution, not after"
+    ]
+  },
+  "executor_metrics": {
+    "wall_time_s": 15.213659048080444,
+    "total_calls": 1,
+    "by_role": {
+      "executor": {
+        "n": 1,
+        "input_tokens": 498,
+        "output_tokens": 1500,
+        "duration_s": 15.201777935028076
+      }
+    },
+    "total_input_tokens": 498,
+    "total_output_tokens": 1500
+  }
+}

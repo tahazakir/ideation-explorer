@@ -1,0 +1,277 @@
+{
+  "assignment": {
+    "name": "se_dining",
+    "title": "Design and develop a web app for campus dining information",
+    "description": "Build a web application that helps students find and navigate campus dining options. The app should surface real-time or scheduled information about dining halls, menus, hours, and wait times. Students should be able to filter, search, and plan their meals. Deliver a working prototype with at least 3 core features, a brief design document explaining your architecture decisions, and a short demo.",
+    "constraints": [
+      "Must be a working prototype, not a mockup or wireframe.",
+      "At least 3 distinct user-facing features (e.g. menu browsing, filtering, favorites).",
+      "Must handle at least one external data source (scraped, API, or mocked dataset).",
+      "Include a design document covering component structure and data flow.",
+      "No specific framework required but choice must be justified.",
+      "AI use must be documented: what was generated vs. written manually."
+    ],
+    "deadline_days": 14.0
+  },
+  "config": {
+    "n_rooms": 3,
+    "max_depth": 2,
+    "max_options": 2,
+    "max_consultations": null,
+    "min_margin": 0.05
+  },
+  "metrics": {
+    "wall_time_s": 10.637249231338501,
+    "total_calls": 7,
+    "by_role": {
+      "option_generator": {
+        "n": 3,
+        "input_tokens": 1241,
+        "output_tokens": 483,
+        "duration_s": 8.033376932144165
+      },
+      "consultant": {
+        "n": 4,
+        "input_tokens": 4635,
+        "output_tokens": 683,
+        "duration_s": 11.311372995376587
+      }
+    },
+    "total_input_tokens": 5876,
+    "total_output_tokens": 1166
+  },
+  "pool": {
+    "completed": 4,
+    "refused": 0
+  },
+  "advisory": {
+    "low_confidence": true,
+    "refused": true,
+    "margin": 0.0,
+    "budget_exhausted": false,
+    "reason": "top-two margin 0.000 < threshold 0.050"
+  },
+  "recommended_plan": [],
+  "root": {
+    "history": [],
+    "decision": "Technology stack (frontend framework)",
+    "is_leaf": false,
+    "verdict": {
+      "quality": 0.72,
+      "scope_fit": 0.765,
+      "notes": "Solid tool choice (React/Node stack is appropriate for a web prototype and justifiable) and realistic data strategy (mocking avoids fragility). The 14-day window gives real breathing room, but the plan lacks specificity on emergence or depth\u2014this is a CRUD app with filtering, not a systems model. Quality will hinge entirely on execution quality (component design, data flow clarity, demo polish) rather than conceptual insight. Feasibility is high, but scope fit is only moderate because there's no indication the student is pushing toward architectural complexity or novel UX patterns that would justify the full timeline.",
+      "n_consultations": 4,
+      "quality_stddev": 0.0,
+      "budget_exhausted": false
+    },
+    "chosen_best_option": "React with Node.js/Express backend",
+    "branches": [
+      {
+        "option": "React with Node.js/Express backend",
+        "child": {
+          "history": [
+            "React with Node.js/Express backend"
+          ],
+          "decision": "Data source strategy for dining information",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.72,
+            "scope_fit": 0.75,
+            "notes": "Solid tool choice (React/Node stack is appropriate for a web prototype and justifiable) and realistic data strategy (mocking avoids fragility). The 14-day window gives real breathing room, but the plan lacks specificity on emergence or depth\u2014this is a CRUD app with filtering, not a systems model. Quality will hinge entirely on execution quality (component design, data flow clarity, demo polish) rather than conceptual insight. Feasibility is high, but scope fit is only moderate because there's no indication the student is pushing toward architectural complexity or novel UX patterns that would justify the full timeline.",
+            "n_consultations": 2,
+            "quality_stddev": 0.0,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Mock/static dataset (JSON file or seeded database) to simulate real data without external dependencies",
+          "branches": [
+            {
+              "option": "Mock/static dataset (JSON file or seeded database) to simulate real data without external dependencies",
+              "child": {
+                "history": [
+                  "React with Node.js/Express backend",
+                  "Mock/static dataset (JSON file or seeded database) to simulate real data without external dependencies"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "Solid tool choice (React/Node stack is appropriate for a web prototype and justifiable) and realistic data strategy (mocking avoids fragility). The 14-day window gives real breathing room, but the plan lacks specificity on emergence or depth\u2014this is a CRUD app with filtering, not a systems model. Quality will hinge entirely on execution quality (component design, data flow clarity, demo polish) rather than conceptual insight. Feasibility is high, but scope fit is only moderate because there's no indication the student is pushing toward architectural complexity or novel UX patterns that would justify the full timeline.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Live scraping or API integration (e.g., university dining API, web scraper for actual dining hall pages)",
+              "child": {
+                "history": [
+                  "React with Node.js/Express backend",
+                  "Live scraping or API integration (e.g., university dining API, web scraper for actual dining hall pages)"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.75,
+                  "notes": "React/Node.js is a sound, industry-standard choice for a web app and clearly justifiable; 14 days is adequate runway. The plan risks underspecification on the scraping/API layer (real dining APIs are rare; web scraping is brittle and time-consuming) and lacks detail on which 3 features will be prioritized, what the data model looks like, or how the design document will demonstrate architectural thinking beyond 'React components + Express routes.' The core feasibility is high, but execution risk hinges on data source reliability and feature scope creep\u2014tighten the feature list and nail down the data contract early.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "option": "Vue.js with Python/Flask backend",
+        "child": {
+          "history": [
+            "Vue.js with Python/Flask backend"
+          ],
+          "decision": "Data source and real-time update strategy",
+          "is_leaf": false,
+          "verdict": {
+            "quality": 0.72,
+            "scope_fit": 0.78,
+            "notes": "The tech stack is sound and well-justified for the 14-day window, and web scraping + backend jobs is a realistic choice for real-time data. The scope risk is that 'at least 3 core features' is under-specified\u2014the plan needs to commit to exactly which 3 (menu browsing + filtering + favorites is clear; search alone risks being thin), and the design document must explicitly map component structure to avoid vagueness. Good feasibility, good fit, but quality will depend entirely on execution clarity and whether the student over-commits to features mid-project.",
+            "n_consultations": 2,
+            "quality_stddev": 0.0,
+            "budget_exhausted": false
+          },
+          "chosen_best_option": "Web scraping (BeautifulSoup) of existing campus dining website with scheduled backend jobs",
+          "branches": [
+            {
+              "option": "Web scraping (BeautifulSoup) of existing campus dining website with scheduled backend jobs",
+              "child": {
+                "history": [
+                  "Vue.js with Python/Flask backend",
+                  "Web scraping (BeautifulSoup) of existing campus dining website with scheduled backend jobs"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.78,
+                  "notes": "The tech stack is sound and well-justified for the 14-day window, and web scraping + backend jobs is a realistic choice for real-time data. The scope risk is that 'at least 3 core features' is under-specified\u2014the plan needs to commit to exactly which 3 (menu browsing + filtering + favorites is clear; search alone risks being thin), and the design document must explicitly map component structure to avoid vagueness. Good feasibility, good fit, but quality will depend entirely on execution clarity and whether the student over-commits to features mid-project.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            },
+            {
+              "option": "Mock/static dataset in database with manual update capability for prototype demo",
+              "child": {
+                "history": [
+                  "Vue.js with Python/Flask backend",
+                  "Mock/static dataset in database with manual update capability for prototype demo"
+                ],
+                "decision": null,
+                "is_leaf": true,
+                "verdict": {
+                  "quality": 0.72,
+                  "scope_fit": 0.78,
+                  "notes": "Vue.js + Flask is a sound tech stack with good feasibility for a 14-day web app prototype\u2014no tool friction here. The scope is appropriate: 3 features (menu browsing, filtering, favorites) is well-scoped, and the mock dataset sidesteps unreliable scraping while staying honest about prototype limitations. Quality is held back by vagueness on architecture depth (component structure, state management, data flow specifics) and no mention of how the design document will demonstrate systems thinking beyond standard MVC. The plan would strengthen with a decision on frontend state management (Vuex/Pinia) and explicit database schema outline.",
+                  "n_consultations": 1,
+                  "quality_stddev": 0.0,
+                  "budget_exhausted": false
+                },
+                "chosen_best_option": null,
+                "branches": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "llm_calls": [
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 409,
+      "output_tokens": 157,
+      "duration_s": 2.569988965988159,
+      "started_at": 1777251017.170414,
+      "history_depth": 0,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 416,
+      "output_tokens": 164,
+      "duration_s": 2.5274147987365723,
+      "started_at": 1777251019.741893,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "option_generator",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 416,
+      "output_tokens": 162,
+      "duration_s": 2.9359731674194336,
+      "started_at": 1777251019.740774,
+      "history_depth": 1,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1159,
+      "output_tokens": 164,
+      "duration_s": 2.7655348777770996,
+      "started_at": 1777251022.2695522,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1153,
+      "output_tokens": 177,
+      "duration_s": 2.8801679611206055,
+      "started_at": 1777251022.2708669,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1159,
+      "output_tokens": 167,
+      "duration_s": 2.9051930904388428,
+      "started_at": 1777251022.677003,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    },
+    {
+      "agent_role": "consultant",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": 1164,
+      "output_tokens": 175,
+      "duration_s": 2.760477066040039,
+      "started_at": 1777251025.035297,
+      "history_depth": 2,
+      "ok": true,
+      "error": null
+    }
+  ],
+  "ts_finished": 1777251027.796113
+}

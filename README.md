@@ -27,14 +27,14 @@ the system:
 6. The root reports per-first-decision quality, recommends a full
    end-to-end plan, and (governance) refuses to recommend when
    confidence is too low or the cost ceiling was hit.
-7. A separate **executor stub** consumes the recommended plan and
+7. A separate **execution planner agent** consumes the recommended plan and
    emits an ordered task DAG, closing the ideation → execution loop.
 
 ## Setup
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 echo "CLAUDE_API_KEY=sk-ant-..." > .env   # or ANTHROPIC_API_KEY
 ```
 
@@ -47,7 +47,7 @@ Pick one of the bundled assignments (`web_app`, `ml_notebook`,
 # Ideate
 python -m ideation_explorer.main --assignment ml_notebook \
     --rooms 3 --depth 2 --options 2 \
-    --out outputs/runs/ml_notebook.json \
+    --out outputs/sample_runs/ml_notebook.json \
     --plan-out outputs/recommended_plans/ml_notebook.json
 
 # Hand off to the executor
@@ -58,7 +58,8 @@ python -m ideation_explorer.executor outputs/recommended_plans/ml_notebook.json 
 Governance flags:
 - `--max-consultations N` hard cap on consultant LLM calls (cost ceiling).
 - `--min-margin F` (default 0.05) refuse to recommend when the gap
-  between the best and second-best root option is below F.
+  between the best and second-best root option is below F. Per-assignment
+  minimums can be set in the spec (e.g. `vague` uses 0.08 automatically).
 
 ## Folder guide
 
@@ -69,7 +70,7 @@ ideation_explorer/         # the multi-agent system itself
   explorer.py                recursive coroutine (probe / antenna)
   consultant_pool.py         bounded semaphore + cost cap + budget-exhausted handling
   aggregate.py               consultation-weighted mean, stddev, notes propagation
-  executor.py                ideation → execution handoff stub
+  executor.py                execution planner agent (ideation → task DAG handoff)
   main.py                    CLI entrypoint, governance gate
   recorder.py, llm.py        instrumentation + async Claude wrapper
 
@@ -84,18 +85,26 @@ AI_USAGE.md                 tools used, prompts, manual edits, verifications
 
 ## Evaluation summary
 
-5 ideation cases (`web_app`, `ml_notebook`, `lit_review`, `multi_agent`,
-`vague`) + 1 executor handoff case, plus a budget-cap reproducer for F3.
-Per-case metrics in [eval/evaluation_results.csv](eval/evaluation_results.csv);
-qualitative results, failures, and what changed in
-[eval/failure_log.md](eval/failure_log.md) and
-[eval/version_notes.md](eval/version_notes.md).
+Three evaluation tiers:
+
+- **CAL-1 through CAL-5** — annotator calibration with external ground truth. Five
+  graders (Professor Anand + 4 TAs) across five assignment types rated plans on
+  feasibility/5 and scope_fit/5. Leave-one-out cross-validation. v1 MAE=0.21 →
+  LOO MAE=0.14 (37% average reduction). All five profiles generated a 5/5 scope plan.
+- **GOV-1 through GOV-3** — governance boundary tests: near-tied root options,
+  under-specified brief, and budget cap. All three pass after their respective fixes.
+- **SYS-1 and SYS-2** — author-assessed smoke tests: ml_notebook ideation run
+  (margin=0.100, widest of all runs) and executor handoff (12-task DAG).
+
+Full results in [eval/evaluation_results.csv](eval/evaluation_results.csv);
+test scenarios in [eval/test_cases.csv](eval/test_cases.csv); failures and
+iteration in [eval/failure_log.md](eval/failure_log.md).
 
 ## Outputs
 
 Full LLM-call traces (one JSON per run, includes the entire decision
 tree, every consultant verdict, per-call tokens and latency) live under
-[outputs/runs/](outputs/runs/). Recommended-plan handoffs in
+[outputs/sample_runs/](outputs/sample_runs/). Recommended-plan handoffs in
 [outputs/recommended_plans/](outputs/recommended_plans/). Executor task
 DAGs in [outputs/exec_plans/](outputs/exec_plans/).
 

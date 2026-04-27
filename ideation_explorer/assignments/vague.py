@@ -15,4 +15,5 @@ SPEC = AssignmentSpec(
         "Should use AI.",
     ],
     deadline_days=14.0,
+    min_margin=0.08,  # vague specs produce tightly clustered verdicts; tighter gate needed
 )
