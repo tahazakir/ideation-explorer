@@ -21,9 +21,7 @@ Ideation Explorer takes an open-ended assignment spec (title, description, const
 
 ## Repository link
 
-> **[Paste GitHub repository URL here]**
->
-> If not using GitHub: submit the compressed project folder alongside this PDF.
+> **https://github.com/tahazakir/ideation-explorer**
 
 ---
 
