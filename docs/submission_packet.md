@@ -27,9 +27,9 @@ Ideation Explorer takes an open-ended assignment spec (title, description, const
 
 ## 5-minute project video
 
-> **https://drive.google.com/file/d/13AFDcPngodV_vhHk16BETSBbqrJtkUft/view?usp=sharing**
+> [https://drive.google.com/file/d/13AFDcPngodV\_vhHk16BETSBbqrJtkUft/view?usp=sharing](https://drive.google.com/file/d/13AFDcPngodV_vhHk16BETSBbqrJtkUft/view?usp=sharing)
 
-Video covers: problem and user (0:00), architecture (0:35), main workflow demo — AI workforce modeling live dashboard with 3-way tool-choice split (1:10), trace/coordination evidence (2:30), failure case — budget cap + governance refusal (3:00), evaluation and calibration results (3:45), execution planner handoff (4:30).
+Video covers: problem and user, architecture, main workflow demo (AI workforce modeling live dashboard with 3-way tool-choice split), trace/coordination evidence, failure case (budget cap + governance refusal), evaluation and calibration results, execution planner handoff.
 
 ---
 
